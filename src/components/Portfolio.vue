@@ -49,7 +49,21 @@
                 <div>
                     <div v-for="tech in data.technologies" :key="tech.id" class="tech">
                         <img :src="tech.icon" :alt="tech.name" />
-                        <p>{{ tech.name }}</p>
+                        <p v-html="tech.name"></p>
+                    </div>
+                </div>
+            </section>
+            <section id="projects">
+                <h2><span>Projects</span> That I've Built</h2>
+                <div>
+                    <div v-for="project in data.projects" :key="project.id" class="project">
+                        <img :src="project.image" :alt="project.name" />
+                        <div>
+                            <h3 v-html="project.title"></h3>
+                            <p v-html="project.description" class="project-description"></p>
+                            <p v-html="project.tags" class="project-tags"></p>
+                            <a href="project.link"><SvgIcon name="github" /></a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -59,7 +73,7 @@
 
 <script>
 import { portfolioData } from '../data/data.js';
-import SvgIcon from './shared/SvgIcon.vue'
+import SvgIcon from './shared/SvgIcon.vue';
 
 export default {
     data() {
@@ -76,6 +90,80 @@ export default {
 </script>
 
 <style scoped>
+
+/* PROJECTS */
+
+#projects>div {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.project:nth-child(even) {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.project {
+    position: relative;
+    height: 20rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    padding: 1rem 2rem;
+    margin: 0 10rem;
+}
+
+.project div {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 999;
+}
+
+.project-description {
+    padding: 1rem;
+    background-color: var(--dark-grey-trans);
+    border-radius: var(--border-radius-l);
+    text-align: left;
+    color: var(--white);
+    transition: var(--hover-transition-s);
+}
+
+.project-description:hover {
+    transform: translateY(-0.25rem);
+    transition: var(--hover-transition);
+}
+
+.project-tags {
+    color: var(--green);
+}
+
+.project svg {
+    height: 2rem;
+    width: 2rem;
+    fill: var(--white);
+}
+
+.project img {
+    position: absolute;
+    right: 0;
+    height: 20rem;
+    border-radius: var(--border-radius-l);
+    transition: var(--hover-transition-s);
+}
+
+.project:nth-child(even) img {
+    left: 0;
+}
+
+.project img:hover {
+    transform: scale(1.05);
+    transition: var(--hover-transition);
+}
+
 /* TECHNOLOGIES */
 
 #technologies div {
@@ -96,6 +184,7 @@ export default {
     border-radius: var(--border-radius-l);
     cursor: pointer;
     box-shadow: var(--shadow);
+    transition: var(--hover-transition-s);
 }
 
 .tech img {
@@ -132,11 +221,7 @@ export default {
 #about h1 {
     font-size: 3rem;
     font-weight: 600;
-}
-
-#about h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
+    color: var(--white);
 }
 
 #about-buttons {
@@ -226,9 +311,16 @@ button:hover {
 
 h2 {
     text-align: center;
-    padding: 3rem 0;
+    padding: 5rem 0 4rem 0;
     font-size: 2rem;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
+    color: var(--white);
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
 }
 </style>
