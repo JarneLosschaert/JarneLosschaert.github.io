@@ -48,7 +48,7 @@
                 <h2><span>Technologies</span> That I Use</h2>
                 <div>
                     <div v-for="tech in data.technologies" :key="tech.id" class="tech">
-                        <img :src="tech.icon" :alt="tech.name" />
+                        <SvgIcon :name="tech.icon" />
                         <p v-html="tech.name"></p>
                     </div>
                 </div>
@@ -123,6 +123,10 @@ export default {
     z-index: 999;
 }
 
+.project:nth-child(even) div {
+    align-items: end;
+}
+
 .project-description {
     padding: 1rem;
     background-color: var(--dark-grey-trans);
@@ -147,10 +151,15 @@ export default {
     fill: var(--white);
 }
 
+.project a {
+    width: fit-content;
+}
+
 .project img {
     position: absolute;
     right: 0;
     height: 20rem;
+    box-shadow: var(--shadow);
     border-radius: var(--border-radius-l);
     transition: var(--hover-transition-s);
 }
@@ -160,7 +169,8 @@ export default {
 }
 
 .project img:hover {
-    transform: scale(1.05);
+    box-shadow: none;
+    transform: scale(1.025);
     transition: var(--hover-transition);
 }
 
@@ -187,13 +197,27 @@ export default {
     transition: var(--hover-transition-s);
 }
 
-.tech img {
+.tech svg {
     width: 3rem;
+    height: 3rem;
+    fill: var(--light-grey);
+    stroke: var(--light-gray);
+    transition: var(--hover-transition-s);
+}
+
+.tech p {
+    transition: var(--hover-transition-s);
 }
 
 .tech:hover {
     transform: scale(1.05);
     box-shadow: none;
+    transition: var(--hover-transition);
+}
+
+.tech:hover p, .tech:hover svg {
+    color: var(--white);
+    fill: var(--white);
     transition: var(--hover-transition);
 }
 
@@ -276,7 +300,11 @@ header nav ul {
     gap: 2rem;
 }
 
-header nav ul li a:hover {
+header a {
+    transition: var(--hover-transition-s);
+}
+
+header a:hover {
     color: var(--green);
     transition: var(--hover-transition);
 }
