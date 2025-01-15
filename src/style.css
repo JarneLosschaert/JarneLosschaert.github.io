@@ -75,3 +75,23 @@ span {
   color: var(--green);
   font-weight: 700;
 }
+
+:root::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: var(--shadow);
+	border-radius: var(--border-radius-l);
+	background-color: none;
+}
+
+:root::-webkit-scrollbar
+{
+	width: 0.5rem;
+	background-color: none;
+}
+
+:root::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: var(--shadow-l);
+	background-color: var(--green);
+}
