@@ -7,7 +7,7 @@
             <nav>
                 <ul>
                     <li><a href="#">About</a></li>
-                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact Me</a></li>
@@ -51,6 +51,28 @@
                     </div>
                 </div>
             </section>
+            <section id="experience">
+                <h2>My <span>Experience</span> So Far</h2>
+                <div id="experiences">
+                    <div id="experience-left">
+                        <div v-for="experience in oddExperiences" :key="experience.id" class="experience">
+                            <div class="circle"></div>
+                            <h4 v-html="experience.date"></h4>
+                            <img :src="experience.image" :alt="experience.date" />
+                            <p v-html="experience.description"></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div id="experience-right">
+                        <div v-for="experience in evenExperiences" :key="experience.id" class="experience">
+                            <div class="circle"></div>
+                            <h4 v-html="experience.date"></h4>
+                            <img :src="experience.image" :alt="experience.date" />
+                            <p v-html="experience.description"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="skills">
                 <h2><span>Skills</span> That I've Acquired</h2>
                 <div>
@@ -68,10 +90,19 @@
                         <div>
                             <h3 v-html="project.title"></h3>
                             <p v-html="project.description" class="project-description"></p>
-                            <p v-html="project.tags" class="project-tags"></p>
-                            <a :href="project.link">
-                                <SvgIcon name="socials/github" />
-                            </a>
+                            <div class="project-tags">
+                                <div v-for="(tag, index) in project.tags" :key="tag.id">
+                                    <p v-html="tag.name"></p>
+                                    <p v-if="index < project.tags.length - 1">~</p>
+                                </div>
+                            </div>
+                            <div class="project-links">
+                                <div v-for="link in project.links" :key="link.id">
+                                    <a :href="link.link">
+                                        <SvgIcon :name="link.icon" />
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -87,18 +118,117 @@ import SvgIcon from './shared/SvgIcon.vue';
 export default {
     data() {
         return {
-            data: portfolioData,
+            data: portfolioData
         };
+    },
+    computed: {
+        oddExperiences() {
+            return this.data.experience.filter((_, index) => index % 2 === 0);
+        },
+        evenExperiences() {
+            return this.data.experience.filter((_, index) => index % 2 !== 0);
+        }
     },
     components: {
         SvgIcon
     },
-    methods: {
-    }
 };
 </script>
 
 <style scoped>
+/* EXPERIENCE */
+
+#experiences {
+    padding: 0 5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+#experiences hr {
+    background-color: var(--light-gray);
+    color: var(--light-gray);
+    border-color: var(--light-gray);
+    border-radius: var(--border-radius-l);
+}
+
+#experiences>div {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+#experience-left p {
+    margin-right: 3rem;
+}
+
+#experience-left .experience {
+    align-items: flex-end;
+}
+
+#experience-left .circle {
+    right: -1.55rem;
+}
+
+#experience-right {
+    margin-top: 10rem;
+}
+
+#experience-right p {
+    margin-left: 3rem;
+}
+
+#experience-right .circle {
+    left: -1.55rem;
+}
+
+.experience {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.experience p {
+    margin-top: 10rem;
+    z-index: 988;
+    padding: 1rem;
+    background-color: var(--dark-grey-trans);
+    border-radius: var(--border-radius-l);
+    color: var(--white);
+    transition: var(--hover-transition-s);
+}
+
+.experience p:hover {
+    transform: translateY(-0.25rem);
+    transition: var(--hover-transition);
+}
+
+.experience img {
+    position: absolute;
+    top: 3rem;
+    height: 15rem;
+    max-width: 80%;
+    object-fit: cover;
+    border-radius: var(--border-radius-l);
+    box-shadow: var(--shadow-l);
+    transition: var(--hover-transition-s);
+}
+
+.experience img:hover {
+    transform: scale(1.025);
+    transition: var(--hover-transition);
+}
+
+.experience .circle {
+    position: absolute;
+    top: 1.25rem;
+    height: 1rem;
+    width: 1rem;
+    background-color: var(--green);
+    border-radius: 50%;
+}
+
 /* PROJECTS */
 
 #projects>div {
@@ -123,7 +253,7 @@ export default {
     margin: 0 10rem;
 }
 
-.project div {
+.project>div {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -150,7 +280,23 @@ export default {
 }
 
 .project-tags {
+    display: flex;
+    gap: 0.5rem;
     color: var(--green);
+}
+
+.project-tags div {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.project-tags p {
+    color: var(--green);
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
 }
 
 .project svg {
@@ -354,8 +500,8 @@ header nav ul li a:hover {
 /* GENERAL */
 
 @font-face {
-  font-family: "Syncopate";
-  src: url(../assets/fonts/syncopate/Syncopate-Bold.ttf);
+    font-family: "Syncopate";
+    src: url(../assets/fonts/syncopate/Syncopate-Bold.ttf);
 }
 
 button {
@@ -388,7 +534,8 @@ h2 {
     color: var(--white);
 }
 
-h2, h2 span {
+h2,
+h2 span {
     font-family: "Syncopate", serif;
     text-transform: uppercase;
     text-align: center;
@@ -401,5 +548,11 @@ h3 {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--white);
+}
+
+h4 {
+    color: var(--green);
+    font-weight: 600;
+    text-transform: uppercase;
 }
 </style>

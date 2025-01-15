@@ -11,6 +11,28 @@ export const portfolioData = {
         { id: 5, name: "spotify", link: "https://open.spotify.com/user/3jw33jpdku5dzi474wloh4wxb", icon: "socials/spotify" },
         { id: 4, name: "instagram", link: "https://www.instagram.com/jarne.losschaert/", icon: "socials/instagram" },
     ],
+    experience: [
+        {
+            id: 1, date: "DEC 2020 - Present",
+            image: "./experience/1.jpg",
+            description: "EasyMailer 1 - Simplify Your Email Experience Ensuring Seamless Communication!. EasyMailer helps you skip the hassle of configuration – saving you time and effort!."
+        },
+        {
+            id: 2, date: "DEC 2020 - Present",
+            image: "./experience/2.jpg",
+            description: "EasyMailer 2 - Simplify Your Email Experience Ensuring Seamless Communication!. EasyMailer helps you skip the hassle of configuration – saving you time and effort!."
+        },
+        {
+            id: 3, date: "DEC 2020 - Present",
+            image: "./experience/1.jpg",
+            description: "EasyMailer 3 - Simplify Your Email Experience Ensuring Seamless Communication!. EasyMailer helps you skip the hassle of configuration – saving you time and effort!."
+        },
+        {
+            id: 4, date: "DEC 2020 - Present",
+            image: "./experience/1.jpg",
+            description: "EasyMailer 4 - Simplify Your Email Experience Ensuring Seamless Communication!. EasyMailer helps you skip the hassle of configuration – saving you time and effort!."
+        },
+    ],
     skills: [
         { id: 1, name: "HTML5", icon: "skills/javascript" },
         { id: 2, name: "CSS3", icon: "skills/javascript" },
@@ -24,14 +46,42 @@ export const portfolioData = {
         { id: 8, name: "Git", icon: "skills/javascript" },
     ],
     projects: [
-        { id: 1, title: "Personal Portfolio", description: "EasyMailer - Simplify Your Email Experience Ensuring Seamless Communication!. EasyMailer helps you skip the hassle of configuration – saving you time and effort!", image: "./projects/project-1.png", tags: "JS - React - Prisma", link: "#"},
-        { id: 2, title: "Personal Portfolio", description: "EasyMailer - Simplify Your Email Experience Ensuring Seamless Communication!. EasyMailer helps you skip the hassle of configuration – saving you time and effort!", image: "./projects/project-1.png", tags: "JS - React - Prisma", link: "#"},
-        { id: 3, title: "Personal Portfolio", description: "EasyMailer - Simplify Your Email Experience Ensuring Seamless Communication!. EasyMailer helps you skip the hassle of configuration – saving you time and effort!", image: "./projects/project-1.png", tags: "JS - React - Prisma", link: "#"},
+        {
+            id: 1, title: "Personal Portfolio", description: "EasyMailer - Simplify Your Email Experience Ensuring Seamless Communication!. EasyMailer helps you skip the hassle of configuration – saving you time and effort!",
+            image: "./projects/project-1.png",
+            tags: [
+                { id: 1, name: "JS" },
+                { id: 2, name: "React" },
+                { id: 3, name: "Prisma" },
+            ],
+            links: [
+                { id: 1, icon: "socials/github", link: "#" },
+            ]
+        },
+        {
+            id: 2, title: "Personal Portfolio", description: "EasyMailer - Simplify Your Email Experience Ensuring Seamless Communication!. EasyMailer helps you skip the hassle of configuration – saving you time and effort!",
+            image: "./projects/project-1.png",
+            tags: [
+                { id: 1, name: "JS" },
+                { id: 2, name: "React" },
+                { id: 3, name: "Prisma" },
+            ],
+            links: [
+                { id: 1, icon: "socials/github", link: "#" },
+            ]
+        },
+        {
+            id: 3, title: "Personal Portfolio", description: "EasyMailer - Simplify Your Email Experience Ensuring Seamless Communication!. EasyMailer helps you skip the hassle of configuration – saving you time and effort!",
+            image: "./projects/project-1.png",
+            tags: [
+                { id: 1, name: "JS" },
+                { id: 2, name: "React" },
+                { id: 3, name: "Prisma" },
+            ],
+            links: [
+                { id: 1, icon: "socials/github", link: "#" },
+            ]
+        },
     ],
-    form: {
-        name: "Jarne Losschaert",
-        email: "jarnelosschaert@gmail.com",
-        message: ""
-    }
 };
 
