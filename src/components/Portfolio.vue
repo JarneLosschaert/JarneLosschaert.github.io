@@ -8,7 +8,7 @@
                 <ul>
                     <li><a href="#">About</a></li>
                     <li><a href="#education">Education</a></li>
-                    <li><a href="#technologies">Technologies</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact Me</a></li>
                     <button>
@@ -41,15 +41,22 @@
                 <div id="about-profile">
                     <div id="about-img">
                         <img :src="data.profile" alt="profile" />
+                        <div id="about-socials">
+                            <div v-for="social in data.socials" :key="social.id" class="social">
+                                <a :href="social.link">
+                                    <SvgIcon :name="social.icon" />
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
-            <section id="technologies">
-                <h2><span>Technologies</span> That I Use</h2>
+            <section id="skills">
+                <h2><span>Skills</span> That I've Acquired</h2>
                 <div>
-                    <div v-for="tech in data.technologies" :key="tech.id" class="tech">
-                        <SvgIcon :name="tech.icon" />
-                        <p v-html="tech.name"></p>
+                    <div v-for="skill in data.skills" :key="skill.id" class="skill">
+                        <SvgIcon :name="skill.icon" />
+                        <p v-html="skill.name"></p>
                     </div>
                 </div>
             </section>
@@ -62,7 +69,9 @@
                             <h3 v-html="project.title"></h3>
                             <p v-html="project.description" class="project-description"></p>
                             <p v-html="project.tags" class="project-tags"></p>
-                            <a href="project.link"><SvgIcon name="github" /></a>
+                            <a :href="project.link">
+                                <SvgIcon name="socials/github" />
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -90,7 +99,6 @@ export default {
 </script>
 
 <style scoped>
-
 /* PROJECTS */
 
 #projects>div {
@@ -120,7 +128,7 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    z-index: 999;
+    z-index: 998;
 }
 
 .project:nth-child(even) div {
@@ -146,8 +154,8 @@ export default {
 }
 
 .project svg {
-    height: 2rem;
-    width: 2rem;
+    height: 1.75rem;
+    width: 1.75rem;
     fill: var(--white);
 }
 
@@ -174,16 +182,16 @@ export default {
     transition: var(--hover-transition);
 }
 
-/* TECHNOLOGIES */
+/* SKILLS */
 
-#technologies div {
+#skills div {
     display: flex;
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
 }
 
-.tech {
+.skill {
     width: 8rem;
     display: flex;
     flex-direction: column;
@@ -197,7 +205,7 @@ export default {
     transition: var(--hover-transition-s);
 }
 
-.tech svg {
+.skill svg {
     width: 3rem;
     height: 3rem;
     fill: var(--light-grey);
@@ -205,17 +213,18 @@ export default {
     transition: var(--hover-transition-s);
 }
 
-.tech p {
+.skill p {
     transition: var(--hover-transition-s);
 }
 
-.tech:hover {
+.skill:hover {
     transform: scale(1.05);
     box-shadow: none;
     transition: var(--hover-transition);
 }
 
-.tech:hover p, .tech:hover svg {
+.skill:hover p,
+.skill:hover svg {
     color: var(--white);
     fill: var(--white);
     transition: var(--hover-transition);
@@ -261,27 +270,60 @@ export default {
 }
 
 #about-img {
-    padding: 1rem 1rem 4rem 1rem;
+    padding: 1rem 1rem 1rem 1rem;
     background-color: var(--white);
     box-shadow: var(--shadow-l);
     transform: rotate(15deg);
 }
 
 #about-img img {
-    height: 20rem;
+    height: 22rem;
+}
+
+#about-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+#about-socials svg {
+    height: 2.25rem;
+    width: 2.25rem;
+    fill: var(--dark-grey-trans);
+    color: var(--dark-grey-trans);
+    transition: var(--hover-transition-s);
+}
+
+#about-socials svg:hover {
+    fill: var(--green);
+    color: var(--green);
+    transition: var(--hover-transition);
 }
 
 /* MAIN */
 
-main {
+#portfolio {
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+main {
+    width: 80rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 3rem 5rem;
+    margin-top: 5rem;
 }
 
 /* HEADER */
 
 header {
+    position: fixed;
+    z-index: 999;
+    width: 85%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -304,12 +346,17 @@ header a {
     transition: var(--hover-transition-s);
 }
 
-header a:hover {
+header nav ul li a:hover {
     color: var(--green);
     transition: var(--hover-transition);
 }
 
 /* GENERAL */
+
+@font-face {
+  font-family: "Syncopate";
+  src: url(../assets/fonts/syncopate/Syncopate-Bold.ttf);
+}
 
 button {
     display: flex;
@@ -338,12 +385,16 @@ button:hover {
 }
 
 h2 {
+    color: var(--white);
+}
+
+h2, h2 span {
+    font-family: "Syncopate", serif;
+    text-transform: uppercase;
     text-align: center;
     padding: 5rem 0 4rem 0;
     font-size: 2rem;
     font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-    color: var(--white);
 }
 
 h3 {
