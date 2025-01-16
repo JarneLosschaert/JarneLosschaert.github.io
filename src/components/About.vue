@@ -8,7 +8,7 @@
             </div>
             <p v-html="data.about"></p>
             <div id="about-buttons">
-                <button>
+                <button @click="scrollToSection">
                     <p>Contact Me</p>
                     <SvgIcon name="message" />
                 </button>
@@ -42,6 +42,19 @@ export default {
         return {
             data: portfolioData
         };
+    },
+    methods: {
+        scrollToSection(event) {
+            event.preventDefault();
+            const targetElement = document.getElementById("contact");
+            if (targetElement) {
+                const targetPosition = targetElement.offsetTop - 50;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
     },
     components: {
         SvgIcon

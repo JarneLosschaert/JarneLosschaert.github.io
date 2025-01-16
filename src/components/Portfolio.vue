@@ -12,7 +12,8 @@
                             @click="scrollToSection">Skills</a></li>
                     <li :class="{ active: currentSection === 'projects' }"><a href="#projects"
                             @click="scrollToSection">Projects</a></li>
-                    <li :class="{ active: currentSection === 'contact' }"><a href="#contact">Contact Me</a></li>
+                    <li :class="{ active: currentSection === 'contact' }"><a href="#contact"
+                            @click="scrollToSection">Contact Me</a></li>
                     <button>
                         <p>Resume</p>
                         <SvgIcon name="download" />
@@ -25,6 +26,7 @@
             <Experiences id="experiences" />
             <Skills id="skills" />
             <Projects id="projects" />
+            <Contact id="contact" />
         </main>
     </div>
 </template>
@@ -36,6 +38,7 @@ import About from './About.vue';
 import Experiences from './Experiences.vue';
 import Skills from './Skills.vue';
 import Projects from './Projects.vue';
+import Contact from './Contact.vue';
 
 export default {
     data() {
@@ -82,7 +85,8 @@ export default {
         About,
         Experiences,
         Skills,
-        Projects
+        Projects,
+        Contact
     }
 };
 </script>
