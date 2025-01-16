@@ -47,7 +47,7 @@ export const portfolioData = {
     ],
     projects: [
         {
-            id: 1, title: "Personal Portfolio", description: "EasyMailer - Simplify Your Email Experience Ensuring Seamless Communication!. EasyMailer helps you skip the hassle of configuration – saving you time and effort!",
+            id: 1, title: "Personal Portfolio", description: "EasyMailer 1- Simplify Your Email Experience Ensuring Seamless Communication!. EasyMailer helps you skip the hassle of configuration – saving you time and effort!",
             image: "./projects/project-1.png",
             tags: [
                 { id: 1, name: "JS" },
@@ -59,7 +59,7 @@ export const portfolioData = {
             ]
         },
         {
-            id: 2, title: "Personal Portfolio", description: "EasyMailer - Simplify Your Email Experience Ensuring Seamless Communication!. EasyMailer helps you skip the hassle of configuration – saving you time and effort!",
+            id: 2, title: "Personal Portfolio", description: "EasyMailer 2- Simplify Your Email Experience Ensuring Seamless Communication!. EasyMailer helps you skip the hassle of configuration – saving you time and effort!",
             image: "./projects/project-1.png",
             tags: [
                 { id: 1, name: "JS" },
@@ -71,7 +71,19 @@ export const portfolioData = {
             ]
         },
         {
-            id: 3, title: "Personal Portfolio", description: "EasyMailer - Simplify Your Email Experience Ensuring Seamless Communication!. EasyMailer helps you skip the hassle of configuration – saving you time and effort!",
+            id: 3, title: "Personal Portfolio", description: "EasyMailer 3- Simplify Your Email Experience Ensuring Seamless Communication!. EasyMailer helps you skip the hassle of configuration – saving you time and effort!",
+            image: "./projects/project-1.png",
+            tags: [
+                { id: 1, name: "JS" },
+                { id: 2, name: "React" },
+                { id: 3, name: "Prisma" },
+            ],
+            links: [
+                { id: 1, icon: "socials/github", link: "#" },
+            ]
+        },
+        {
+            id: 4, title: "Personal Portfolio", description: "EasyMailer 4- Simplify Your Email Experience Ensuring Seamless Communication!. EasyMailer helps you skip the hassle of configuration – saving you time and effort!",
             image: "./projects/project-1.png",
             tags: [
                 { id: 1, name: "JS" },

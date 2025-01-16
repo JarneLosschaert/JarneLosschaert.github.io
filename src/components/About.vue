@@ -98,6 +98,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 5rem;
 }
 
 #about-img {

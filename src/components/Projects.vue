@@ -2,7 +2,7 @@
     <section id="projects">
         <h2 v-motion-slide-visible-once-bottom :duration="1000"><span>Projects</span> That I've Built</h2>
         <div>
-            <div v-for="project in data.projects" :key="project.id" class="project">
+            <div v-for="project in displayedProjects" :key="project.id" class="project">
                 <Motion :initial="{ opacity: 0, x: initialX }" :visible-once="{ opacity: 1, x: 0, scale: 1 }"
                     :duration="1000">
                     <img :src="project.image" :alt="project.name" />
@@ -25,6 +25,10 @@
                     </div>
                 </Motion>
             </div>
+            <button @click="toggleProjects">
+                <p>{{ showAll ? 'Show Less' : 'Show All Projects' }}</p>
+                <SvgIcon :name="showAll ? 'less' : 'more'" />
+            </button>
         </div>
     </section>
 </template>
@@ -36,7 +40,9 @@ import SvgIcon from './shared/SvgIcon.vue';
 export default {
     data() {
         return {
-            data: portfolioData
+            data: portfolioData,
+            displayedProjects: [],
+            showAll: false,
         };
     },
     components: {
@@ -46,7 +52,28 @@ export default {
         initialX() {
             return Math.random() > 0.5 ? 100 : -100;
         }
-    }
+    },
+    methods: {
+        toggleProjects() {
+            this.showAll = !this.showAll;
+            this.displayedProjects = this.showAll ? this.data.projects : this.data.projects.slice(0, 3);
+            if (!this.showAll) {
+                const projects = document.querySelectorAll('.project');
+                const targetElement = projects[2];
+                console.log(targetElement);
+                if (targetElement) {
+                    const targetPosition = targetElement.offsetTop - 200;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+    },
+    mounted() {
+        this.displayedProjects = this.data.projects.slice(0, 3);
+    },
 };
 </script>
 
@@ -146,5 +173,9 @@ export default {
     box-shadow: none;
     transform: scale(1.025);
     transition: var(--hover-transition);
+}
+
+button {
+    margin: 0 auto;
 }
 </style>

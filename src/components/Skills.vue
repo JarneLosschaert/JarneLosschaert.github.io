@@ -27,6 +27,7 @@ export default {
 </script>
 
 <style scoped>
+
 #skills div {
     display: flex;
     justify-content: center;
