@@ -79,6 +79,8 @@ time,
 mark,
 audio,
 video,
+textarea,
+input,
 button {
     margin: 0;
     padding: 0;

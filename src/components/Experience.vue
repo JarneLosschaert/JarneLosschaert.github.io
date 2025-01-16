@@ -52,7 +52,7 @@ export default {
     position: absolute;
     top: 3rem;
     height: 15rem;
-    max-width: 80%;
+    max-width: 75%;
     object-fit: cover;
     border-radius: var(--border-radius-l);
     box-shadow: var(--shadow-l);
@@ -74,8 +74,12 @@ export default {
     border-radius: 50%;
 }
 
-.right .experience {
-    align-items: start;
+.right {
+    align-items: flex-start;
+}
+
+.right p {
+    margin-left: 3rem;
 }
 
 .right .circle {
