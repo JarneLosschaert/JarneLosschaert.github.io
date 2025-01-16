@@ -39,7 +39,7 @@ export default {
 }
 
 #contact form {
-    width: 40rem;
+    width: 40vw;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -69,7 +69,7 @@ textarea {
 }
 
 textarea {
-    height: 7rem;
+    height: 10rem;
     resize: vertical;
 }
 

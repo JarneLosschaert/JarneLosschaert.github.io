@@ -28,6 +28,16 @@
             <Projects id="projects" />
             <Contact id="contact" />
         </main>
+        <footer>
+            <span>&copy; 2025 - Jarne Losschaert</span>
+            <div>
+                <div v-for="social in data.socials" :key="social.id" class="social">
+                    <a :href="social.link">
+                        <SvgIcon :name="social.icon" />
+                    </a>
+                </div>
+            </div>
+        </footer>
     </div>
 </template>
 
@@ -62,7 +72,7 @@ export default {
             }
         },
         updateCurrentSection() {
-            const sections = ['about', 'experiences', 'skills', 'projects'];
+            const sections = ['about', 'experiences', 'skills', 'projects', 'contact'];
             const scrollPosition = window.scrollY + window.innerHeight / 2;
             for (const section of sections) {
                 const element = document.getElementById(section);
@@ -156,4 +166,41 @@ header nav ul li a:hover {
     border-color: var(--green) transparent transparent transparent;
     border-radius: 50%;
 }
+
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+    width: 100%;
+    background-color: var(--blue);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+footer div {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+footer svg {
+    height: 2.25rem;
+    width: 2.25rem;
+    fill: var(--light-grey);
+    color: var(--light-grey);
+    transition: var(--hover-transition-s);
+}
+
+svg path {
+    fill: var(--blue);
+}
+
+footer svg:hover {
+    fill: var(--green);
+    color: var(--green);
+    transition: var(--hover-transition);
+}
+
+
 </style>
