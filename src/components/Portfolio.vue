@@ -4,11 +4,11 @@
             <a href="#portfolio" @click="scrollToSection"><img src="../assets/logo.png" alt="logo" /></a>
             <nav>
                 <ul>
-                    <li><a href="#portfolio" @click="scrollToSection">About</a></li>
-                    <li><a href="#experiences" @click="scrollToSection">Experience</a></li>
-                    <li><a href="#skills" @click="scrollToSection">Skills</a></li>
-                    <li><a href="#projects" @click="scrollToSection">Projects</a></li>
-                    <li><a href="#contact">Contact Me</a></li>
+                    <li :class="{ active: currentSection === 'about' }"><a href="#portfolio" @click="scrollToSection">About</a></li>
+                    <li :class="{ active: currentSection === 'experiences' }"><a href="#experiences" @click="scrollToSection">Experience</a></li>
+                    <li :class="{ active: currentSection === 'skills' }"><a href="#skills" @click="scrollToSection">Skills</a></li>
+                    <li :class="{ active: currentSection === 'projects' }"><a href="#projects" @click="scrollToSection">Projects</a></li>
+                    <li :class="{ active: currentSection === 'contact' }"><a href="#contact">Contact Me</a></li>
                     <button>
                         <p>Resume</p>
                         <SvgIcon name="download" />
@@ -17,10 +17,10 @@
             </nav>
         </header>
         <main>
-            <About />
-            <Experiences />
-            <Skills />
-            <Projects />
+            <About id="about" />
+            <Experiences id="experiences" />
+            <Skills id="skills" />
+            <Projects id="projects" />
         </main>
     </div>
 </template>
@@ -36,7 +36,8 @@ import Projects from './Projects.vue';
 export default {
     data() {
         return {
-            data: portfolioData
+            data: portfolioData,
+            currentSection: ''
         };
     },
     methods: {
@@ -46,9 +47,31 @@ export default {
             const targetId = target.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
             if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
+                const targetPosition = targetElement.offsetTop - 50;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        },
+        updateCurrentSection() {
+            const sections = ['about', 'experiences', 'skills', 'projects'];
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
+            for (const section of sections) {
+                const element = document.getElementById(section);
+                if (element.offsetTop <= scrollPosition && element.offsetTop + element.offsetHeight > scrollPosition) {
+                    this.currentSection = section;
+                    break;
+                }
             }
         }
+    },
+    mounted() {
+        window.addEventListener('scroll', this.updateCurrentSection);
+        this.updateCurrentSection(); // Initial call to set the current section
+    },
+    beforeDestroy() {
+        window.removeEventListener('scroll', this.updateCurrentSection);
     },
     components: {
         SvgIcon,
@@ -56,11 +79,16 @@ export default {
         Experiences,
         Skills,
         Projects
-    },
+    }
 };
 </script>
 
 <style scoped>
+
+.active a {
+    color: var(--green);
+}
+
 #portfolio {
     display: flex;
     flex-direction: column;
