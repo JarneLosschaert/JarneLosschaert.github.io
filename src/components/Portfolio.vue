@@ -1,15 +1,13 @@
 <template>
     <div id="portfolio">
         <header>
-            <a href="#">
-                <img src="../assets/logo.png" alt="logo" />
-            </a>
+            <a href="#portfolio" @click="scrollToSection"><img src="../assets/logo.png" alt="logo" /></a>
             <nav>
                 <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#portfolio" @click="scrollToSection">About</a></li>
+                    <li><a href="#experiences" @click="scrollToSection">Experience</a></li>
+                    <li><a href="#skills" @click="scrollToSection">Skills</a></li>
+                    <li><a href="#projects" @click="scrollToSection">Projects</a></li>
                     <li><a href="#contact">Contact Me</a></li>
                     <button>
                         <p>Resume</p>
@@ -40,6 +38,17 @@ export default {
         return {
             data: portfolioData
         };
+    },
+    methods: {
+        scrollToSection(event) {
+            event.preventDefault();
+            const target = event.target.closest('a');
+            const targetId = target.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
     },
     components: {
         SvgIcon,

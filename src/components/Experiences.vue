@@ -1,12 +1,12 @@
 <template>
-    <section>
+    <section id="experiences">
         <h2>My <span>Experience</span> So Far</h2>
-        <div id="experiences">
-            <div>
+        <div>
+            <div class="experience-list">
                 <Experience :experiences="oddExperiences" />
             </div>
             <hr>
-            <div id="experiences-right">
+            <div class="experience-list" id="experiences-right">
                 <Experience :experiences="evenExperiences" :left="false"/>
             </div>
         </div>
@@ -40,7 +40,7 @@ export default {
 </script>
 
 <style scoped>
-#experiences {
+#experiences>div {
     padding: 0 5rem;
     display: flex;
     gap: 1rem;
@@ -53,7 +53,7 @@ export default {
     border-radius: var(--border-radius-l);
 }
 
-#experiences>div {
+.experience-list {
     width: 50%;
     display: flex;
     flex-direction: column;
