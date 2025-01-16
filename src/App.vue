@@ -7,7 +7,4 @@ import Portfolio from './components/Portfolio.vue';
 </template>
 
 <style scoped>
-main {
-  background-color: #081822;
-}
 </style>

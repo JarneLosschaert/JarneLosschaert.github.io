@@ -1,6 +1,6 @@
 <template>
     <div id="portfolio">
-        <header>
+        <header v-motion-slide-top :duration="1000">
             <a href="#portfolio" @click="scrollToSection"><img src="../assets/logo.png" alt="logo" /></a>
             <nav>
                 <ul>
@@ -81,11 +81,11 @@ export default {
                     break;
                 }
             }
-        }
+        },
     },
     mounted() {
         window.addEventListener('scroll', this.updateCurrentSection);
-        this.updateCurrentSection(); // Initial call to set the current section
+        this.updateCurrentSection();
     },
     beforeDestroy() {
         window.removeEventListener('scroll', this.updateCurrentSection);
@@ -201,6 +201,4 @@ footer svg:hover {
     color: var(--green);
     transition: var(--hover-transition);
 }
-
-
 </style>

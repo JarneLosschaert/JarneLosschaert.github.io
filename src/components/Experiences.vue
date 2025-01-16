@@ -1,11 +1,11 @@
 <template>
     <section id="experiences">
-        <h2>My <span>Experience</span> So Far</h2>
+        <h2 v-motion-slide-visible-once-bottom :duration="1000">My <span>Experience</span> So Far</h2>
         <div>
             <div class="experience-list">
                 <Experience :experiences="oddExperiences" />
             </div>
-            <hr>
+            <hr v-motion-slide-visible-once-bottom :duration="1000">
             <div class="experience-list" id="experiences-right">
                 <Experience :experiences="evenExperiences" :left="false"/>
             </div>
@@ -51,6 +51,7 @@ export default {
     color: var(--light-gray);
     border-color: var(--light-gray);
     border-radius: var(--border-radius-l);
+    z-index: -1;
 }
 
 .experience-list {

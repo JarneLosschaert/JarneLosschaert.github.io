@@ -1,9 +1,11 @@
 <template>
     <div v-for="experience in experiences" :key="experience.id" :class="['experience', { right: !left }]">
-        <div class="circle"></div>
-        <h4 v-html="experience.date"></h4>
-        <img :src="experience.image" :alt="experience.date" />
-        <p v-html="experience.description"></p>
+        <Motion :initial="{ opacity: 0, x: initialX }" :visible-once="{ opacity: 1, x: 0, scale: 1 }" :duration="1000">
+            <div class="circle"></div>
+            <h4 v-html="experience.date"></h4>
+            <img :src="experience.image" :alt="experience.date" />
+            <p v-html="experience.description"></p>
+        </Motion>
     </div>
 </template>
 
@@ -18,12 +20,17 @@ export default {
             type: Boolean,
             default: true
         }
+    },
+    computed: {
+        initialX() {
+            return this.left ? -100 : 100;
+        }
     }
 };
 </script>
 
 <style scoped>
-.experience {
+.experience>div {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -72,9 +79,10 @@ export default {
     width: 1rem;
     background-color: var(--green);
     border-radius: 50%;
+    z-index: 998;
 }
 
-.right {
+.right>div {
     align-items: flex-start;
 }
 

@@ -1,13 +1,13 @@
 <template>
     <section id="about">
         <div id="about-text">
-            <p id="intro">Hi there, 👋 I'm</p>
-            <div>
+            <p id="intro" v-motion-fade :duration="1200" :delay="200">Hi there, 👋 I'm</p>
+            <div v-motion-fade :duration="1000" :delay="400">
                 <h1 v-html="data.name"></h1>
                 <h3 id="tag" v-html="data.tag"></h3>
             </div>
-            <p v-html="data.about"></p>
-            <div id="about-buttons">
+            <p v-html="data.about" v-motion-fade :duration="1000" :delay="600"></p>
+            <div id="about-buttons" v-motion-fade :duration="1000" :delay="800">
                 <button @click="scrollToSection">
                     <p>Contact Me</p>
                     <SvgIcon name="message" />
@@ -18,7 +18,7 @@
                 </button>
             </div>
         </div>
-        <div id="about-profile">
+        <div id="about-profile" v-motion-pop :duration="1000" :delay="500">
             <div id="about-img">
                 <img :src="data.profile" alt="profile" />
                 <div id="about-socials">

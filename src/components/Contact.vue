@@ -1,7 +1,7 @@
 <template>
     <section id="contact">
-        <h2><span>Get In Touch</span></h2>
-        <form>
+        <h2 v-motion-slide-visible-once-bottom :duration="1000"><span>Get In Touch</span></h2>
+        <form v-motion-slide-visible-once-bottom :duration="1000">
             <div>
                 <input type="text" placeholder="Name" />
                 <input type="email" placeholder="Email" />

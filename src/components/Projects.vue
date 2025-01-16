@@ -1,26 +1,29 @@
 <template>
     <section id="projects">
-        <h2><span>Projects</span> That I've Built</h2>
+        <h2 v-motion-slide-visible-once-bottom :duration="1000"><span>Projects</span> That I've Built</h2>
         <div>
             <div v-for="project in data.projects" :key="project.id" class="project">
-                <img :src="project.image" :alt="project.name" />
-                <div>
-                    <h3 v-html="project.title"></h3>
-                    <p v-html="project.description" class="project-description"></p>
-                    <div class="project-tags">
-                        <div v-for="(tag, index) in project.tags" :key="tag.id">
-                            <p v-html="tag.name"></p>
-                            <p v-if="index < project.tags.length - 1">~</p>
+                <Motion :initial="{ opacity: 0, x: initialX }" :visible-once="{ opacity: 1, x: 0, scale: 1 }"
+                    :duration="1000">
+                    <img :src="project.image" :alt="project.name" />
+                    <div>
+                        <h3 v-html="project.title"></h3>
+                        <p v-html="project.description" class="project-description"></p>
+                        <div class="project-tags">
+                            <div v-for="(tag, index) in project.tags" :key="tag.id">
+                                <p v-html="tag.name"></p>
+                                <p v-if="index < project.tags.length - 1">~</p>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <div v-for="link in project.links" :key="link.id">
+                                <a :href="link.link">
+                                    <SvgIcon :name="link.icon" />
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="project-links">
-                        <div v-for="link in project.links" :key="link.id">
-                            <a :href="link.link">
-                                <SvgIcon :name="link.icon" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                </Motion>
             </div>
         </div>
     </section>
@@ -39,6 +42,11 @@ export default {
     components: {
         SvgIcon
     },
+    computed: {
+        initialX() {
+            return Math.random() > 0.5 ? 100 : -100;
+        }
+    }
 };
 </script>
 
@@ -49,12 +57,12 @@ export default {
     gap: 3rem;
 }
 
-.project:nth-child(even) {
+.project:nth-child(even) div {
     justify-content: flex-end;
     text-align: right;
 }
 
-.project {
+.project>div {
     position: relative;
     height: 20rem;
     display: flex;
@@ -65,7 +73,7 @@ export default {
     margin: 0 10rem;
 }
 
-.project>div {
+.project>div>div {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -73,7 +81,7 @@ export default {
     z-index: 998;
 }
 
-.project:nth-child(even) div {
+.project:nth-child(even)>div div {
     align-items: end;
 }
 
