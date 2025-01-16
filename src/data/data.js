@@ -2,7 +2,7 @@ export const portfolioData = {
     name: "<span>Jarne</span> Losschaert",
     tag: "Master Software Engineer Student",
     about: "As a <span>Frontend Developer</span>, I specialize in building and launching dynamic user interfaces and  experiences that captivate both clients and companies. I harness the  power of the efficient technologies  and design systems  to create interactive solutions that leave a lasting impression. My  primary objective is to deliver the best, easiest, and most functional  long-term solutions that not only meet the requirements of the company  but also exceed the expectations of clients. With a strong commitment to user satisfaction, I strive to create seamless and engaging experiences that seamlessly blend aesthetic appeal with practical functionality.",
-    profile: "./profile.jpg",
+    images: ["./profile-1.jpg", "./profile-2.jpg"],
     email: "jarnelosschaert@gmail.com",
     phone: "+32 474 62 71 53",
     socials: [

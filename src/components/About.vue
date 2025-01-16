@@ -20,7 +20,10 @@
         </div>
         <div id="about-profile" v-motion-pop :duration="1000" :delay="500">
             <div id="about-img">
-                <img :src="data.profile" alt="profile" />
+                <div id="about-images">
+                    <img :src="data.images[0]" alt="profile" />
+                    <img :src="data.images[1]" alt="profile" />
+                </div>
                 <div id="about-socials">
                     <div v-for="social in data.socials" :key="social.id" class="social">
                         <a :href="social.link">
@@ -108,9 +111,6 @@ export default {
     transform: rotate(15deg);
 }
 
-#about-img img {
-    height: 22rem;
-}
 
 #about-socials {
     display: flex;
@@ -131,5 +131,33 @@ export default {
     fill: var(--green);
     color: var(--green);
     transition: var(--hover-transition);
+}
+
+#about-images {
+    position: relative;
+    width: 16rem;
+    height: 22rem;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+#about-images img {
+    height: 22rem;
+    object-fit: cover;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: 1s;
+}
+
+#about-images img:nth-child(2) {
+    transform: rotateY(180deg);
+}
+
+#about-images:hover img:nth-child(2) {
+    transform: rotateY(0deg);
+}
+
+#about-images:hover img:nth-child(1) {
+    transform: rotateY(-180deg)
 }
 </style>
