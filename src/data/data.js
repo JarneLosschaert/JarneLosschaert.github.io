@@ -6,10 +6,10 @@ export const portfolioData = {
     email: "jarnelosschaert@gmail.com",
     phone: "+32 474 62 71 53",
     socials: [
-        { id: 1, name: "linkedin", link: "https://www.linkedin.com/in/jarne-losschaert-7b7b74257/", icon: "socials/linkedin" },
-        { id: 2, name: "github", link: "https://github.com/JarneLosschaert", icon: "socials/github" },
-        { id: 5, name: "spotify", link: "https://open.spotify.com/user/3jw33jpdku5dzi474wloh4wxb", icon: "socials/spotify" },
-        { id: 4, name: "instagram", link: "https://www.instagram.com/jarne.losschaert/", icon: "socials/instagram" },
+        { id: 1, name: "linkedin", link: "https://www.linkedin.com/in/jarne-losschaert-7b7b74257/", icon: "linkedin" },
+        { id: 2, name: "github", link: "https://github.com/JarneLosschaert", icon: "github" },
+        { id: 5, name: "spotify", link: "https://open.spotify.com/user/3jw33jpdku5dzi474wloh4wxb", icon: "spotify" },
+        { id: 4, name: "instagram", link: "https://www.instagram.com/jarne.losschaert/", icon: "instagram" },
     ],
     experience: [
         {
@@ -34,16 +34,16 @@ export const portfolioData = {
         },
     ],
     skills: [
-        { id: 1, name: "HTML5", icon: "skills/javascript" },
-        { id: 2, name: "CSS3", icon: "skills/javascript" },
-        { id: 3, name: "JavaScript", icon: "skills/javascript" },
-        { id: 4, name: "React", icon: "skills/javascript" },
-        { id: 5, name: "Node.js", icon: "skills/javascript" },
-        { id: 6, name: "Express", icon: "skills/javascript" },
-        { id: 7, name: "MongoDB", icon: "skills/javascript" },
-        { id: 8, name: "Git", icon: "skills/javascript" },
-        { id: 8, name: "Git", icon: "skills/javascript" },
-        { id: 8, name: "Git", icon: "skills/javascript" },
+        { id: 1, name: "HTML5", icon: "javascript" },
+        { id: 2, name: "CSS3", icon: "javascript" },
+        { id: 3, name: "JavaScript", icon: "javascript" },
+        { id: 4, name: "React", icon: "javascript" },
+        { id: 5, name: "Node.js", icon: "javascript" },
+        { id: 6, name: "Express", icon: "javascript" },
+        { id: 7, name: "MongoDB", icon: "javascript" },
+        { id: 8, name: "Git", icon: "javascript" },
+        { id: 8, name: "Git", icon: "javascript" },
+        { id: 8, name: "Git", icon: "javascript" },
     ],
     projects: [
         {
@@ -55,7 +55,7 @@ export const portfolioData = {
                 { id: 3, name: "Prisma" },
             ],
             links: [
-                { id: 1, icon: "socials/github", link: "#" },
+                { id: 1, icon: "github", link: "#" },
             ]
         },
         {
@@ -67,7 +67,7 @@ export const portfolioData = {
                 { id: 3, name: "Prisma" },
             ],
             links: [
-                { id: 1, icon: "socials/github", link: "#" },
+                { id: 1, icon: "github", link: "#" },
             ]
         },
         {
@@ -79,7 +79,7 @@ export const portfolioData = {
                 { id: 3, name: "Prisma" },
             ],
             links: [
-                { id: 1, icon: "socials/github", link: "#" },
+                { id: 1, icon: "github", link: "#" },
             ]
         },
         {
@@ -91,7 +91,7 @@ export const portfolioData = {
                 { id: 3, name: "Prisma" },
             ],
             links: [
-                { id: 1, icon: "socials/github", link: "#" },
+                { id: 1, icon: "github", link: "#" },
             ]
         },
     ],
