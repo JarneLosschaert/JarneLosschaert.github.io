@@ -28,7 +28,6 @@ export default {
     computed: {
         dynamicComponent() {
             const name = this.name;
-            console.log(name);
             return defineAsyncComponent(icons[name]);
         },
     },

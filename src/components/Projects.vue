@@ -52,10 +52,12 @@ export default {
         toggleProjects() {
             this.showAll = !this.showAll;
             this.displayedProjects = this.showAll ? this.data.projects : this.data.projects.slice(0, 3);
-            if (!this.showAll) {
+            setTimeout(() => {
                 const projects = document.querySelectorAll('.project');
-                const targetElement = projects[2];
-                console.log(targetElement);
+                let targetElement = projects[2];
+                if (this.showAll) {
+                    targetElement = projects[3];
+                }
                 if (targetElement) {
                     const targetPosition = targetElement.offsetTop - 200;
                     window.scrollTo({
@@ -63,7 +65,8 @@ export default {
                         behavior: 'smooth'
                     });
                 }
-            }
+            }, 100);
+
         },
         getInitialX(index) {
             return index % 2 === 0 ? 100 : -100;
