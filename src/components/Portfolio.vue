@@ -4,10 +4,14 @@
             <a href="#portfolio" @click="scrollToSection"><img src="../assets/logo.png" alt="logo" /></a>
             <nav>
                 <ul>
-                    <li :class="{ active: currentSection === 'about' }"><a href="#portfolio" @click="scrollToSection">About</a></li>
-                    <li :class="{ active: currentSection === 'experiences' }"><a href="#experiences" @click="scrollToSection">Experience</a></li>
-                    <li :class="{ active: currentSection === 'skills' }"><a href="#skills" @click="scrollToSection">Skills</a></li>
-                    <li :class="{ active: currentSection === 'projects' }"><a href="#projects" @click="scrollToSection">Projects</a></li>
+                    <li :class="{ active: currentSection === 'about' }"><a href="#portfolio"
+                            @click="scrollToSection">About</a></li>
+                    <li :class="{ active: currentSection === 'experiences' }"><a href="#experiences"
+                            @click="scrollToSection">Experience</a></li>
+                    <li :class="{ active: currentSection === 'skills' }"><a href="#skills"
+                            @click="scrollToSection">Skills</a></li>
+                    <li :class="{ active: currentSection === 'projects' }"><a href="#projects"
+                            @click="scrollToSection">Projects</a></li>
                     <li :class="{ active: currentSection === 'contact' }"><a href="#contact">Contact Me</a></li>
                     <button>
                         <p>Resume</p>
@@ -84,11 +88,6 @@ export default {
 </script>
 
 <style scoped>
-
-.active a {
-    color: var(--green);
-}
-
 #portfolio {
     display: flex;
     flex-direction: column;
@@ -123,10 +122,11 @@ header img {
 header nav ul {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 header a {
+    padding: 0 0.5rem;
     transition: var(--hover-transition-s);
 }
 
@@ -135,4 +135,21 @@ header nav ul li a:hover {
     transition: var(--hover-transition);
 }
 
+.active a {
+    color: var(--green);
+    transition: var(--hover-transition);
+    position: relative;
+}
+
+.active a:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    height: 7px;
+    width: 100%;
+    border: solid 2px var(--green);
+    border-color: var(--green) transparent transparent transparent;
+    border-radius: 50%;
+}
 </style>
