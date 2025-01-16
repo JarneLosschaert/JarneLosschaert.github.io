@@ -15,7 +15,7 @@ export const portfolioData = {
         {
             id: 1, date: "DEC 2020 - Present",
             image: "./experience/1.jpg",
-            description: "EasyMailer 1 - Simplify Your Email Experience Ensuring Seamless Communication!. EasyMailer helps you skip the hassle of configuration – saving you time and effort!."
+            description: "EasyMailer 1 - Simplify Your Email Experience Ensuring Seamless Communication!. EasyMailer helps you skip the hassle of configuration – saving you time and effort!. EasyMailer 1 - Simplify Your Email Experience Ensuring Seamless Communication!. EasyMailer helps you skip the hassle of configuration – saving you time and effort!."
         },
         {
             id: 2, date: "DEC 2020 - Present",
