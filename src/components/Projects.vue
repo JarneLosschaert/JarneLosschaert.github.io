@@ -1,6 +1,6 @@
 <template>
     <section id="projects">
-        <h2 v-motion-slide-visible-once-bottom :duration="1000"><span>Projects</span> That I've Built</h2>
+        <h2 v-motion-slide-visible-once-bottom :duration="1000"><span>Projects</span> I've Built</h2>
         <div>
             <div v-for="(project, index) in displayedProjects" :key="project.id" class="project">
                 <Motion :initial="{ opacity: 0, x: getInitialX(index) }" :visible-once="{ opacity: 1, x: 0, scale: 1 }"

@@ -1,6 +1,6 @@
 <template>
     <section id="skills">
-        <h2 v-motion-slide-visible-once-bottom :duration="1000"><span>Skills</span> That I've Acquired</h2>
+        <h2 v-motion-slide-visible-once-bottom :duration="1000"><span>Skills</span> I've Learned</h2>
         <div v-motion-slide-visible-once-bottom :duration="1000">
             <div v-for="skill in data.skills" :key="skill.id" class="skill">
                 <SvgIcon :name="skill.icon" />
