@@ -62,6 +62,6 @@ export default {
 }
 
 #experiences-right {
-    margin-top: 12rem;
+    margin-top: 14rem;
 }
 </style>
