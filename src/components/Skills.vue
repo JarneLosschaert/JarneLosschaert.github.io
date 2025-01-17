@@ -52,8 +52,6 @@ export default {
 .skill svg {
     width: 3rem;
     height: 3rem;
-    fill: var(--light-grey);
-    stroke: var(--light-gray);
     transition: var(--hover-transition-s);
 }
 
@@ -67,10 +65,8 @@ export default {
     transition: var(--hover-transition);
 }
 
-.skill:hover p,
-.skill:hover svg {
+.skill:hover p {
     color: var(--white);
-    fill: var(--white);
     transition: var(--hover-transition);
 }
 </style>
