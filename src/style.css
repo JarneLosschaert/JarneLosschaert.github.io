@@ -47,6 +47,10 @@ a {
   background-color: var(--green);
 }
 
+.invisible {
+  display: none !important;
+}
+
 button {
   display: flex;
   align-items: center;

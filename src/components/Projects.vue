@@ -52,25 +52,31 @@ export default {
         toggleProjects() {
             this.showAll = !this.showAll;
             this.displayedProjects = this.showAll ? this.data.projects : this.data.projects.slice(0, 3);
-            setTimeout(() => {
+            if (this.showAll) {
+                setTimeout(() => {
+                    const projects = document.querySelectorAll('.project');
+                    const targetElement = projects[3];
+                    this.scrollToSection(targetElement);
+                }, 100);
+            } else {
                 const projects = document.querySelectorAll('.project');
-                let targetElement = projects[2];
-                if (this.showAll) {
-                    targetElement = projects[3];
-                }
-                if (targetElement) {
-                    const targetPosition = targetElement.offsetTop - 200;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            }, 100);
+                const targetElement = projects[2];
+                this.scrollToSection(targetElement);
+            }
 
         },
         getInitialX(index) {
             return index % 2 === 0 ? 100 : -100;
         },
+        scrollToSection(targetElement) {
+            if (targetElement) {
+                const targetPosition = targetElement.offsetTop - 200;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
     },
     mounted() {
         this.displayedProjects = this.data.projects.slice(0, 3);

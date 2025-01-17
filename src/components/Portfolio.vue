@@ -38,6 +38,9 @@
                 </div>
             </div>
         </footer>
+        <a href="#portfolio" @click="scrollToSection" id="up" v-motion-roll-visible-bottom :duration="1000">
+            <SvgIcon name="less" />
+        </a>
     </div>
 </template>
 
@@ -78,6 +81,11 @@ export default {
                 const element = document.getElementById(section);
                 if (element.offsetTop <= scrollPosition && element.offsetTop + element.offsetHeight > scrollPosition) {
                     this.currentSection = section;
+                    if (section === 'about') {
+                        document.getElementById('up').classList.add('invisible');
+                    } else {
+                        document.getElementById('up').classList.remove('invisible');
+                    }
                     break;
                 }
             }
@@ -201,4 +209,21 @@ footer svg:hover {
     color: var(--green);
     transition: var(--hover-transition);
 }
+
+#up {
+    display: flex;
+    background-color: var(--green);
+    padding: 1rem;
+    position: fixed;
+    bottom: 5.5rem;
+    right: 2rem;
+    border-radius: 50%;
+}
+
+#up svg {
+    height: 1rem;
+    width: 1rem;
+    fill: var(--white);
+}
+
 </style>
