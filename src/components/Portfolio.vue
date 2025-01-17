@@ -150,6 +150,7 @@ header nav ul {
 
 header a {
     padding: 0 0.5rem;
+    color: var(--white);
     transition: var(--hover-transition-s);
 }
 

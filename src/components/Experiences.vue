@@ -41,7 +41,7 @@ export default {
 
 <style scoped>
 #experiences>div {
-    padding: 0 5rem;
+    padding: 0 2rem;
     display: flex;
     gap: 1rem;
 }

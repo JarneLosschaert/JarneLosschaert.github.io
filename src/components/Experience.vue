@@ -87,6 +87,7 @@ export default {
 }
 
 .right p {
+    margin-right: 0;
     margin-left: 3rem;
 }
 

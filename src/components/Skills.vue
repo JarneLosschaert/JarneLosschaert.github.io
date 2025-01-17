@@ -44,7 +44,7 @@ export default {
     padding: 1rem 3rem;
     background-color: var(--dark-grey);
     border-radius: var(--border-radius-l);
-    cursor: pointer;
+    cursor: default;
     box-shadow: var(--shadow);
     transition: var(--hover-transition-s);
 }
