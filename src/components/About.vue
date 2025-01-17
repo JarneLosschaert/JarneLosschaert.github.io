@@ -73,7 +73,7 @@ export default {
 }
 
 #about-text {
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -101,7 +101,6 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 5rem;
 }
 
 #about-img {

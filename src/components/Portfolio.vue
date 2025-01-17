@@ -81,10 +81,11 @@ export default {
                 const element = document.getElementById(section);
                 if (element.offsetTop <= scrollPosition && element.offsetTop + element.offsetHeight > scrollPosition) {
                     this.currentSection = section;
+                    const $up = document.getElementById('up');
                     if (section === 'about') {
-                        document.getElementById('up').classList.add('invisible');
+                        $up.classList.add('hidden');
                     } else {
-                        document.getElementById('up').classList.remove('invisible');
+                        $up.classList.remove('hidden');
                     }
                     break;
                 }

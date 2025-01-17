@@ -47,7 +47,7 @@ a {
   background-color: var(--green);
 }
 
-.invisible {
+.hidden {
   display: none !important;
 }
 

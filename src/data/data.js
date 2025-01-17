@@ -1,7 +1,7 @@
 export const portfolioData = {
     name: "<span>Jarne</span> Losschaert",
-    tag: "Master Software Engineer Student",
-    about: "As a <span>Frontend Developer</span>, I specialize in building and launching dynamic user interfaces and  experiences that captivate both clients and companies. I harness the  power of the efficient technologies  and design systems  to create interactive solutions that leave a lasting impression. My  primary objective is to deliver the best, easiest, and most functional  long-term solutions that not only meet the requirements of the company  but also exceed the expectations of clients. With a strong commitment to user satisfaction, I strive to create seamless and engaging experiences that seamlessly blend aesthetic appeal with practical functionality.",
+    tag: "Master Software Engineering Student",
+    about: "I am a Master’s student in <span>Software Engineering</span> at the <span>Open University</span>, with a focus on designing and developing innovative digital solutions. My academic journey has provided me with strong <span>analytical</span> and <span>problem-solving skills</span>, as well as a deep commitment to deliver high quality results in every project. I thrive in collaborative environments, using <span>teamwork</span> and <span>communication</span> to move projects forward and achieve shared goals. I also love using <span>creative thinking</span> to overcome challenges and explore new possibilities, ensuring every solution is innovative and impactful.<br><br>Besides coding, I am also a volunteer <span>saxophone teacher</span>, sharing my passion for music with others. In my free time, I enjoy playing <span>badminton</span> and other sports, <span>travel</span> to discover new places, and unwind by <span>gaming</span> gaming now and then as a way to relax and recharge.",
     images: ["./profile-1.jpg", "./profile-2.jpg"],
     email: "jarnelosschaert@gmail.com",
     phone: "+32 474 62 71 53",
