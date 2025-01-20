@@ -1,7 +1,7 @@
 export const portfolioData = {
     name: "<span>Jarne</span> Losschaert",
     tag: "Master Software Engineering Student",
-    about: "I am a Master’s student in <span>Software Engineering</span> at the <span>Open Universiteit</span>, with a focus on designing and developing innovative digital solutions. My academic journey has provided me with strong <span>analytical</span> and <span>problem-solving skills</span>, as well as a deep commitment to deliver high quality results in every project. I thrive in collaborative environments, using <span>teamwork</span> and <span>communication</span> to move projects forward and achieve shared goals. I also love using <span>creative thinking</span> to overcome challenges and explore new possibilities, ensuring every solution is innovative and impactful.<br><br>Besides coding, I am also a volunteer <span>saxophone teacher</span>, sharing my passion for music with others. In my free time, I enjoy playing <span>badminton</span> and other sports, <span>travel</span> to discover new places, and unwind by <span>gaming</span> now and then as a way to relax.",
+    about: "I am a Master’s student in <span>Software Engineering</span> at the <span>Open Universiteit</span>, with a focus on designing and developing innovative digital solutions. My academic journey has provided me with strong <span>analytical</span> and <span>problem-solving skills</span>, as well as a deep commitment to deliver high quality results in every project. I thrive in collaborative environments, using <span>teamwork</span> and <span>communication</span> to move projects forward and achieve shared goals. I also love using <span>creative thinking</span> to overcome challenges and explore new possibilities, ensuring every solution is innovative and impactful.<br><br>Besides coding, I am also a volunteer <span>saxophone teacher</span>, sharing my passion for music with others. In my free time, I enjoy playing <span>badminton</span> and other sports, <span>travel</span> to discover new places, and unwind by <span>gaming</span> now and then.",
     images: ["./profile-1.jpg", "./profile-2.jpg"],
     email: "jarnelosschaert@gmail.com",
     phone: "+32 474 62 71 53",
@@ -15,7 +15,7 @@ export const portfolioData = {
         {
             id: 7, title: "Master", date: "FEB 2025 - NOW",
             image: "./experiences/ou.jpg",
-            description: "Currently pursuing a <span>Master's in Software Engineering</span> at the <span>Open University</span>, I am deepening my expertise in designing, developing, and optimizing software systems. This program equips me with advanced knowledge in areas such as software architecture, agile development, and emerging technologies."
+            description: "Currently pursuing a <span>Master's in Software Engineering</span> at the <span>Open Universiteit</span>, I am deepening my expertise in designing, developing, and optimizing software systems. This program equips me with advanced knowledge in areas such as software architecture, agile development, and emerging technologies."
         },
         {
             id: 6, title: "Student software developer at Liantis", date: "OCT 2024 - DEC 2024",
