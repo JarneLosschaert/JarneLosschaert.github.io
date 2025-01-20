@@ -12,7 +12,7 @@
                     <p>Contact Me</p>
                     <SvgIcon name="message" />
                 </button>
-                <button>
+                <button @click="goToResume">
                     <p>View Resume</p>
                     <SvgIcon name="download" />
                 </button>
@@ -57,6 +57,9 @@ export default {
                     behavior: 'smooth'
                 });
             }
+        },
+        goToResume() {
+            window.open('./Jarne-Losschaert-CV.pdf', '_blank');
         }
     },
     components: {

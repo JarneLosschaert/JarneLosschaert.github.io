@@ -14,7 +14,7 @@
                             @click="scrollToSection">Projects</a></li>
                     <li :class="{ active: currentSection === 'contact' }"><a href="#contact"
                             @click="scrollToSection">Contact Me</a></li>
-                    <button>
+                    <button @click="goToResume">
                         <p>Resume</p>
                         <SvgIcon name="download" />
                     </button>
@@ -91,6 +91,9 @@ export default {
                 }
             }
         },
+        goToResume() {
+            window.open('./Jarne-Losschaert-CV.pdf', '_blank');
+        }
     },
     mounted() {
         window.addEventListener('scroll', this.updateCurrentSection);
