@@ -1,13 +1,13 @@
 <template>
     <section id="contact">
         <h2 v-motion-slide-visible-once-bottom :duration="1000"><span>Get In Touch</span></h2>
-        <form v-motion-slide-visible-once-bottom :duration="1000">
+        <form v-motion-slide-visible-once-bottom :duration="1000" @submit.prevent="sendEmail">
             <div>
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" />
+                <input type="text" v-model="form.name" placeholder="Name" required />
+                <input type="email" v-model="form.email" placeholder="Email" required />
             </div>
-            <textarea placeholder="Message"></textarea>
-            <button>
+            <textarea v-model="form.message" placeholder="Message" required></textarea>
+            <button type="submit">
                 <p>Send</p>
                 <SvgIcon name="send" />
             </button>
@@ -18,16 +18,43 @@
 <script>
 import { portfolioData } from '../data/data.js';
 import SvgIcon from './shared/SvgIcon.vue';
+import emailjs from 'emailjs-com';
 
 export default {
     data() {
         return {
-            data: portfolioData
+            data: portfolioData,
+            form: {
+                name: '',
+                email: '',
+                message: ''
+            }
         };
     },
     components: {
         SvgIcon
     },
+    methods: {
+        sendEmail() {
+            const serviceID = import.meta.env.VITE_SERVICE_ID;
+            const templateID = import.meta.env.VITE_TEMPLATE_ID;
+            const userID = import.meta.env.VITE_USER_ID;
+
+            console.log(serviceID, templateID, userID);
+
+            emailjs.send(serviceID, templateID, this.form, userID)
+                .then((response) => {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Message sent successfully!');
+                    this.form.name = '';
+                    this.form.email = '';
+                    this.form.message = '';
+                }, (error) => {
+                    console.log('FAILED...', error);
+                    alert('Failed to send message. Please try again later.');
+                });
+        }
+    }
 };
 </script>
 
