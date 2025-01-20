@@ -13,6 +13,7 @@ const icons = {
     'linkedin': () => import('../../assets/icons/socials/linkedin.vue'),
     'spotify': () => import('../../assets/icons/socials/spotify.vue'),
     'instagram': () => import('../../assets/icons/socials/instagram.vue'),
+    'youtube': () => import('../../assets/icons/socials/youtube.vue'),
     // Skills
     'html': () => import('../../assets/icons/skills/html.vue'),
     'css': () => import('../../assets/icons/skills/css.vue'),

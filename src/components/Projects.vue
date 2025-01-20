@@ -104,7 +104,7 @@ export default {
     align-items: center;
     gap: 3rem;
     padding: 1rem 2rem;
-    margin: 0 10rem;
+    margin: 0 7rem;
 }
 
 .project>div>div {
@@ -157,6 +157,12 @@ export default {
     height: 1.75rem;
     width: 1.75rem;
     fill: var(--white);
+    transition: var(--hover-transition-s);
+}
+
+.project svg:hover {
+    fill: var(--green);
+    transition: var(--hover-transition);
 }
 
 .project a {

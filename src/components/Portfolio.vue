@@ -142,7 +142,7 @@ header {
 }
 
 header img {
-    width: 4rem;
+    width: 3rem;
 }
 
 header nav ul {
