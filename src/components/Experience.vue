@@ -94,4 +94,28 @@ export default {
 .right .circle {
     left: -1.55rem;
 }
+
+@media (max-width: 1000px) {
+    .experience img {
+        height: 10rem;
+    }
+
+    .experience p {
+        margin-top: 5rem;
+    }
+
+    .circle {
+        display: none;
+    }
+}
+
+@media (max-width: 450px) {
+    .experience p {
+        margin-left: 0.5rem;
+    }
+
+    .experience img {
+        left: 1rem;
+    }
+}
 </style>

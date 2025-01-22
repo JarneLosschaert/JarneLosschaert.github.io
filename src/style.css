@@ -86,7 +86,7 @@ h2 span {
   font-family: "Syncopate", serif;
   text-transform: uppercase;
   text-align: center;
-  padding: 8rem 0 2em 0;
+  padding: 8rem 0 3rem 0;
   font-size: 2rem;
   font-weight: 600;
 }
@@ -107,4 +107,24 @@ h4 {
 span {
   color: var(--green) !important;
   font-weight: 600;
+}
+
+@media (max-width: 850px) {
+  h2, h2 span {
+    padding: 4rem 0 2rem 0;
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+  }
+
 }

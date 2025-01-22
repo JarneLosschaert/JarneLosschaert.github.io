@@ -66,7 +66,8 @@ export default {
 }
 
 #contact form {
-    width: 40vw;
+    width: 60vw;
+    max-width: 40rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -114,5 +115,20 @@ textarea:focus {
 
 button {
     justify-content: center;
+}
+
+@media (max-width: 850px) {
+    #contact form {
+        width: 80vw;
+    }
+
+    div {
+        flex-direction: column;
+    }
+
+    input {
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
 </style>

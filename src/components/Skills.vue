@@ -41,7 +41,7 @@ export default {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    padding: 1rem 3rem;
+    padding: 1rem 2rem;
     background-color: var(--dark-grey);
     border-radius: var(--border-radius-l);
     cursor: default;
@@ -56,6 +56,7 @@ export default {
 }
 
 .skill p {
+    text-align: center;
     transition: var(--hover-transition-s);
 }
 
@@ -68,5 +69,28 @@ export default {
 .skill:hover p {
     color: var(--white);
     transition: var(--hover-transition);
+}
+
+@media (max-width: 850px) {
+    #skills div {
+        gap: 0.75rem;
+    }
+
+    .skill {
+        padding: 1rem;
+        width: 7rem;
+        gap: 1rem;
+    }
+
+    .skill svg {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .skill {
+        width: 5rem;
+    }
 }
 </style>

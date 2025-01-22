@@ -32,7 +32,7 @@
             <span>&copy; 2025 - Jarne Losschaert</span>
             <div>
                 <div v-for="social in data.socials" :key="social.id" class="social">
-                    <a :href="social.link">
+                    <a :href="social.link" target="_blank">
                         <SvgIcon :name="social.icon" />
                     </a>
                 </div>
@@ -121,7 +121,8 @@ export default {
 }
 
 main {
-    width: 80rem;
+    width: 85vw;
+    max-width: 75rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -132,20 +133,21 @@ main {
 header {
     position: fixed;
     z-index: 999;
-    width: 85%;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: var(--blue);
-    padding: 1rem 4rem;
     box-shadow: var(--shadow);
 }
 
 header img {
+    margin-left: 4rem;
     width: 3rem;
 }
 
 header nav ul {
+    padding: 1rem 4rem;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -229,6 +231,34 @@ footer svg:hover {
     height: 1rem;
     width: 1rem;
     fill: var(--white);
+}
+
+@media (max-width: 850px) {
+    header {
+        display: none;
+    }
+
+    main {
+        width: 90vw;
+        margin-top: 0;
+        padding: 2rem 0rem;
+    }
+
+    #up {
+        padding: 0.75rem;
+        bottom: 3rem;
+        right: 1rem;
+    }
+
+    #up svg {
+        height: 0.75rem;
+        width: 0.75rem;
+    }
+
+    footer svg {
+        height: 2rem;
+        width: 2rem;
+    }
 }
 
 </style>

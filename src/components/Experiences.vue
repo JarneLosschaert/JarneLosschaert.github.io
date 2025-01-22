@@ -1,13 +1,18 @@
 <template>
     <section id="experiences">
         <h2 v-motion-slide-visible-once-bottom :duration="1000">My <span>Experience</span> So Far</h2>
-        <div>
+        <div id="experiences-split">
             <div class="experience-list">
                 <Experience :experiences="oddExperiences" />
             </div>
             <hr v-motion-slide-visible-once-bottom :duration="1000">
             <div class="experience-list" id="experiences-right">
                 <Experience :experiences="evenExperiences" :left="false"/>
+            </div>
+        </div>
+        <div id="experiences-full">
+            <div class="experience-list">
+                <Experience :experiences="data.experience" :left="false"/>
             </div>
         </div>
     </section>
@@ -40,7 +45,7 @@ export default {
 </script>
 
 <style scoped>
-#experiences>div {
+#experiences #experiences-split {
     padding: 0 2rem;
     display: flex;
     gap: 1rem;
@@ -63,5 +68,32 @@ export default {
 
 #experiences-right {
     margin-top: 14rem;
+}
+
+#experiences-full {
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    #experiences-full {
+        display: flex;
+    }
+
+    #experiences #experiences-split {
+        display: none;
+    }
+
+    #experiences hr {
+        width: 100%;
+    }
+
+    .experience-list {
+        width: 100%;
+        gap: 1rem;
+    }
+
+    #experiences-right {
+        margin-top: 0;
+    }
 }
 </style>

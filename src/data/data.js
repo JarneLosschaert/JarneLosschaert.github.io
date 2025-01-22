@@ -57,8 +57,8 @@ export const portfolioData = {
         { id: 4, name: "Vue.js", icon: "vue" },
         { id: 4, name: "Laravel", icon: "laravel" },
         { id: 10, name: "Angular", icon: "angular" },
-        { id: 7, name: "Java", icon: "java" },
         { id: 8, name: "SQL", icon: "sql" },
+        { id: 16, name: "Docker", icon: "docker" },
         { id: 5, name: ".NET", icon: "net" },
         { id: 6, name: "Blazor", icon: "blazor" },
         { id: 14, name: "C#", icon: "csharp" },
@@ -67,18 +67,18 @@ export const portfolioData = {
         { id: 11, name: "Flutter", icon: "flutter" },
         { id: 9, name: "Kotlin", icon: "kotlin" },
         { id: 15, name: "Android Studio", icon: "android" },
-        { id: 16, name: "Docker", icon: "docker" },
+        { id: 7, name: "Java", icon: "java" },
         { id: 17, name: "Figma", icon: "figma" },
     ],
     projects: [
         {
-            id: 1, title: "Personal Portfolio", description: "I designed and developed my personal portfolio to showcase my skills, projects, and creativity as a software engineer. The design was crafted to reflect my style, while the website was built using Vue.js to make it dynamic and responsive for users.",
-            image: "./projects/portfolio.png",
+            id: 1, title: "Personal Portfolio", description: "I designed and developed my personal portfolio to showcase my skills, projects, and creativity as a software engineer. The design was crafted to reflect my style, while the website was built using Vue.js to make it dynamic and responsive for users. I also integrated animations and transitions to enhance the user experience and create a visually engaging platform.",
+            image: "./projects/heroes-front.png",
             tags: [
-                { id: 3, name: "Design" },
                 { id: 1, name: "Vue.js" },
                 { id: 2, name: "CSS" },
-                { id: 3, name: "Figma" },
+                { id: 3, name: "Design" },
+                { id: 4, name: "Figma" },
             ],
             links: [
                 { id: 1, icon: "github", link: "https://github.com/JarneLosschaert/JarneLosschaert.github.io" },
@@ -86,11 +86,12 @@ export const portfolioData = {
         },
         {
             id: 2, title: "FlavorAI", description: "FlavorAI is a mobile application that simplifies daily life by helping users discover creative recipes based on the ingredients they already have at home. The app uses advanced recognition technology to identify items from a photo of the fridge and suggests delicious meal ideas tailored to what's available. Additionally, FlavorAI tracks fridge contents and offers complementary ingredient suggestions to inspire even more flavorful creations.",
-            image: "./projects/project-1.png",
+            image: "./projects/heroes-front.png",
             tags: [
                 { id: 1, name: "Flutter" },
                 { id: 1, name: "AI" },
-                { id: 3, name: "Figma" },
+                { id: 3, name: "Android Studio" },
+                { id: 4, name: "Figma" },
             ],
             links: [
                 { id: 1, icon: "github", link: "https://github.com/JarneLosschaert/FlavorAI" },
@@ -99,7 +100,7 @@ export const portfolioData = {
         },
         {
             id: 3, title: "DeliverMe", description: "DeliverMe is a user-friendly package delivery app that connects senders and drivers, allowing for seamless and efficient package deliveries. Users are able to request deliveries through the app, and nearby drivers can accept and complete the deliveries. The app provides real-time tracking of deliveries, similar to how Uber shows the location of drivers.",
-            image: "./projects/project-1.png",
+            image: "./projects/heroes-front.png",
             tags: [
                 { id: 4, name: "Kotlin" },
                 { id: 3, name: "Adroid Studio" },
@@ -112,8 +113,8 @@ export const portfolioData = {
             ]
         },
         {
-            id: 4, title: "PlantFocus Label Editor", description: "During my internship, I developed a prototype for personalizing plant labels in a user-friendly way, transforming customized designs into downloadable PDF files. Using .NET and Blazor, I built the application and created the design, combining technical skills with creativity to deliver a functional and visually appealing solution. This project enhanced my ability to manage end-to-end development processes, from concept to execution.",
-            image: "./projects/project-1.png",
+            id: 4, title: "PlantFocus Label Editor", description: "During my internship, I developed a prototype for personalizing plant labels in a user-friendly way, transforming customized designs into downloadable PDF files. Using .NET and Blazor, I built the application and created the design, combining technical skills with creativity to deliver a functional and visually appealing solution.",
+            image: "./projects/heroes-front.png",
             tags: [
                 { id: 1, name: ".NET" },
                 { id: 2, name: "Blazor" },
@@ -129,7 +130,7 @@ export const portfolioData = {
         },
         {
             id: 7, title: "Monopoly", description: "Developed during the first year of our bachelor's program, this project is an online multiplayer web application for playing Monopoly with a retro tech theme. It features a Java-based server for game logic and real-time interactions, combined with a dynamic web interface.",
-            image: "./projects/monopoly.jpg",
+            image: "./projects/monopoly-front.png",
             tags: [
                 { id: 1, name: "HTML" },
                 { id: 1, name: "CSS" },
@@ -144,7 +145,7 @@ export const portfolioData = {
         },
         {
             id: 8, title: "Magic: The Gathering", description: "This web application was created as part of a school project and serves as a deck builder for the card game Magic: The Gathering. Developed with Blazor for the frontend and a .NET backend, it streamlines the process of designing and managing custom decks for players.",
-            image: "./projects/project-1.png",
+            image: "./projects/heroes-front.png",
             tags: [
                 { id: 1, name: ".NET" },
                 { id: 2, name: "Blazor" },
@@ -155,7 +156,7 @@ export const portfolioData = {
         },
         {
             id: 5, title: "Heroes App", description: "For the Heroes app project, We developed a client-side application using Vue.js, with Laravel powering the server. The app displayed a list of heroes and allowed users to create accounts to save their favorite heroes. Additionally, we implemented the page's translation functionality to support multiple languages.",
-            image: "./projects/heroes.png",
+            image: "./projects/heroes-front.png",
             tags: [
                 { id: 1, name: ".Vue.js" },
                 { id: 2, name: "Laravel" },
@@ -167,8 +168,8 @@ export const portfolioData = {
             ]
         },
         {
-            id: 6, title: "Kip Met Appelmoes", description: "Kip Met Appelmoes (Chicken With Applesauce) is a mobile application developed using Kotlin, designed for parents who want to enjoy a restaurant outing without the stress of managing their children. The app helps users find nearby restaurants and filter them based on child-friendly features such as high chairs, kids' menus, playgrounds, and more. By offering these tailored options, the app aims to make dining out easier and more enjoyable for both families and children.",
-            image: "./projects/project-1.png",
+            id: 6, title: "Kip Met Appelmoes", description: "Kip Met Appelmoes (Chicken With Applesauce) is a mobile application developed using Kotlin, designed for parents who want to enjoy a restaurant outing without the stress of managing their children. The app helps users find nearby restaurants and filter them based on child-friendly features such as high chairs, kids' menus, playgrounds, and more.",
+            image: "./projects/heroes-front.png",
             tags: [
                 { id: 1, name: "Kotlin" },
                 { id: 2, name: "Android Studio" },

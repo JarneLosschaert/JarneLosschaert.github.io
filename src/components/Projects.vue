@@ -5,7 +5,6 @@
             <div v-for="(project, index) in displayedProjects" :key="project.id" class="project">
                 <Motion :initial="{ opacity: 0, x: getInitialX(index) }" :visible-once="{ opacity: 1, x: 0, scale: 1 }"
                     :duration="1000">
-                    <img :src="project.image" :alt="project.name" />
                     <div>
                         <h3 v-html="project.title"></h3>
                         <p v-html="project.description" class="project-description"></p>
@@ -17,12 +16,13 @@
                         </div>
                         <div class="project-links">
                             <div v-for="link in project.links" :key="link.id">
-                                <a :href="link.link">
+                                <a :href="link.link" target="_blank">
                                     <SvgIcon :name="link.icon" />
                                 </a>
                             </div>
                         </div>
                     </div>
+                    <img :src="project.image" :alt="project.name" />
                 </Motion>
             </div>
             <button @click="toggleProjects">
@@ -98,17 +98,16 @@ export default {
 
 .project>div {
     position: relative;
-    height: 20rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 3rem;
     padding: 1rem 2rem;
-    margin: 0 7rem;
+    margin: 0 6vw;
 }
 
 .project>div>div {
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -134,7 +133,9 @@ export default {
 }
 
 .project-tags {
+    width: 75%;
     display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
     color: var(--green);
 }
@@ -171,24 +172,66 @@ export default {
 
 .project img {
     position: absolute;
-    right: 0;
-    height: 20rem;
-    box-shadow: var(--shadow);
+    bottom: 0;
+    height: 100%;
+    max-height: 18rem;
     border-radius: var(--border-radius-l);
-    transition: var(--hover-transition-s);
+}
+
+.project:nth-child(odd) img {
+    left: 50%;
 }
 
 .project:nth-child(even) img {
-    left: 0;
-}
-
-.project img:hover {
-    box-shadow: none;
-    transform: scale(1.025);
-    transition: var(--hover-transition);
+    right: 50%;
 }
 
 button {
     margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+    #projects>div {
+        gap: 1rem;
+    }
+
+    .project>div {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0.5rem;
+        margin: 0;
+    }
+
+    .project:nth-child(odd) img {
+        left: auto;
+    }
+
+    .project:nth-child(even) img {
+        right: auto;
+    }
+
+    .project img {
+        position: relative;
+        left: 0;
+        width: 100%;
+        max-width: 60vw;
+        max-height: 100%;
+    }
+
+    .project>div>div {
+        width: 100%;
+    }
+
+    .project:nth-child(even)>div div {
+        align-items: start;
+    }
+
+    .project:nth-child(even) div {
+        justify-content: start;
+    }
+
+    .project .project-tags {
+        width: 100%;
+    }
 }
 </style>

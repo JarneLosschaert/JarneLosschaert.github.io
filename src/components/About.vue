@@ -2,7 +2,7 @@
     <section id="about">
         <div id="about-text">
             <p id="intro" v-motion-fade :duration="1200" :delay="200">Hi there, 👋 I'm</p>
-            <div v-motion-fade :duration="1000" :delay="400">
+            <div id="about-title" v-motion-fade :duration="1000" :delay="400">
                 <h1 v-html="data.name"></h1>
                 <h3 id="tag" v-html="data.tag"></h3>
             </div>
@@ -26,7 +26,7 @@
                 </div>
                 <div id="about-socials">
                     <div v-for="social in data.socials" :key="social.id" class="social">
-                        <a :href="social.link">
+                        <a :href="social.link" target="_blank">
                             <SvgIcon :name="social.icon" />
                         </a>
                     </div>
@@ -79,7 +79,7 @@ export default {
     width: 50%;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 #intro {
@@ -92,6 +92,10 @@ export default {
     font-size: 3rem;
     font-weight: 600;
     color: var(--white);
+}
+
+#about-title {
+    padding-bottom: 0.5rem;
 }
 
 #about-buttons {
@@ -107,7 +111,7 @@ export default {
 }
 
 #about-img {
-    padding: 1rem 1rem 1rem 1rem;
+    padding: 1rem;
     background-color: var(--white);
     box-shadow: var(--shadow-l);
     transform: rotate(15deg);
@@ -161,5 +165,45 @@ export default {
 
 #about-images:hover img:nth-child(1) {
     transform: rotateY(-180deg)
+}
+
+@media (max-width: 1000px) {
+    #about {
+        align-items: center;
+        gap: 2rem;
+    }
+
+    #about h1 {
+        font-size: 2rem;
+    }
+
+    #tag {
+        font-size: 1.25rem;
+    }
+
+    #intro {
+        font-size: 1rem;
+    }
+
+    #about-text {
+        width: 100%;
+    }
+
+    #about-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 1rem;
+    }
+
+    #about-img {
+        transform: rotate(0deg);
+    }
+}
+
+@media (max-width: 450px) {
+    #about-profile {
+        display: none;
+    }
 }
 </style>
