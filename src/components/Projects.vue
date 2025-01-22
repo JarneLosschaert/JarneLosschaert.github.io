@@ -102,8 +102,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     gap: 3rem;
-    padding: 1rem 2rem;
-    margin: 0 6vw;
+    padding: 1rem 5rem;
 }
 
 .project>div>div {
@@ -172,7 +171,7 @@ export default {
 
 .project img {
     position: absolute;
-    bottom: 0;
+    bottom: 1.5rem;
     height: 100%;
     max-height: 18rem;
     border-radius: var(--border-radius-l);

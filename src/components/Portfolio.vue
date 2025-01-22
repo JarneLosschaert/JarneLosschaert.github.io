@@ -121,7 +121,6 @@ export default {
 }
 
 main {
-    width: 85vw;
     max-width: 75rem;
     display: flex;
     flex-direction: column;

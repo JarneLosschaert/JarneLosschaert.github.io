@@ -59,7 +59,7 @@ export default {
             }
         },
         goToResume() {
-            window.open('./Jarne-Losschaert-CV.pdf', '_blank');
+            window.open('./CV-Jarne-Losschaert.pdf', '_blank');
         }
     },
     components: {
@@ -201,7 +201,7 @@ export default {
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 700px) {
     #about-profile {
         display: none;
     }
