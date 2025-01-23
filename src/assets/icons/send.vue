@@ -1,6 +1,16 @@
 <template>
-    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.56 122.88">
-        <path class="cls-1"
-            d="M2.33,44.58,117.33.37a3.63,3.63,0,0,1,5,4.56l-44,115.61h0a3.63,3.63,0,0,1-6.67.28L53.93,84.14,89.12,33.77,38.85,68.86,2.06,51.24a3.63,3.63,0,0,1,.27-6.66Z" />
+    <svg class="w-6 h-6 text-gray-800 dark:text-white turn" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+        height="24" fill="currentColor" viewBox="0 0 24 24">
+        <path fill-rule="evenodd"
+            d="M12 2a1 1 0 0 1 .932.638l7 18a1 1 0 0 1-1.326 1.281L13 19.517V13a1 1 0 1 0-2 0v6.517l-5.606 2.402a1 1 0 0 1-1.326-1.281l7-18A1 1 0 0 1 12 2Z"
+            clip-rule="evenodd" />
     </svg>
 </template>
+
+<style scoped>
+    svg {
+        transform: rotate(45deg);
+        padding-bottom: 0.5rem;
+        transition: var(--hover-transition-s);
+    }
+</style>

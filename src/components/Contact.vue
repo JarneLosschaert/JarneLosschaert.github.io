@@ -7,10 +7,12 @@
                 <input type="email" v-model="form.email" placeholder="Email" required />
             </div>
             <textarea v-model="form.message" placeholder="Message" required></textarea>
-            <button type="submit">
+            <button type="submit" :disabled="loading">
                 <p>Send</p>
-                <SvgIcon name="send" />
+                <SvgIcon name="send" v-if="!loading" />
+                <SvgIcon name="spinner" v-if="loading" />
             </button>
+            <p v-if="message" v-motion-slide-visible-left :duration="1000">{{ message }}</p>
         </form>
     </section>
 </template>
@@ -24,6 +26,8 @@ export default {
     data() {
         return {
             data: portfolioData,
+            loading: false,
+            message: '',
             form: {
                 name: '',
                 email: '',
@@ -40,19 +44,28 @@ export default {
             const templateID = import.meta.env.VITE_TEMPLATE_ID;
             const userID = import.meta.env.VITE_USER_ID;
 
-            console.log(serviceID, templateID, userID);
+            this.loading = true;
 
             emailjs.send(serviceID, templateID, this.form, userID)
                 .then((response) => {
                     console.log('SUCCESS!', response.status, response.text);
-                    alert('Message sent successfully!');
+                    this.message = 'Message sent successfully!';
                     this.form.name = '';
                     this.form.email = '';
                     this.form.message = '';
+                    this.endMail();
                 }, (error) => {
                     console.log('FAILED...', error);
-                    alert('Failed to send message. Please try again later.');
-                });
+                    this.message = 'Failed to send message. Please try again later.';
+                    this.endMail();
+                }
+            );
+        },
+        endMail() {
+            this.loading = false;
+            setTimeout(() => {
+                this.message = '';
+            }, 5000);
         }
     }
 };
