@@ -66,7 +66,12 @@ export default {
 
         },
         getInitialX(index) {
-            return index % 2 === 0 ? 100 : -100;
+            const screenWidth = window.innerWidth;
+            let margin = screenWidth * 0.05;
+            if (screenWidth <= 1000) {
+                margin = screenWidth * 0.01;
+            }
+            return index % 2 === 0 ? margin : -margin;
         },
         scrollToSection(targetElement) {
             if (targetElement) {

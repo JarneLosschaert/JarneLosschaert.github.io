@@ -73,7 +73,7 @@ export const portfolioData = {
     projects: [
         {
             id: 1, title: "Personal Portfolio", description: "I designed and developed my personal portfolio to showcase my skills, projects, and creativity as a software engineer. The design was crafted to reflect my style, while the website was built using Vue.js to make it dynamic and responsive for users. I also integrated animations and transitions to enhance the user experience and create a visually engaging platform.",
-            image: "./projects/heroes-front.png",
+            image: "./projects/portfolio-front.png",
             tags: [
                 { id: 1, name: "Vue.js" },
                 { id: 2, name: "CSS" },

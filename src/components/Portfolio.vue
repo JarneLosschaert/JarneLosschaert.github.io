@@ -92,7 +92,7 @@ export default {
             }
         },
         goToResume() {
-            window.open('./Jarne-Losschaert-CV.pdf', '_blank');
+            window.open('./CV-Jarne-Losschaert.pdf', '_blank');
         }
     },
     mounted() {

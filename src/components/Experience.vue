@@ -23,7 +23,12 @@ export default {
     },
     computed: {
         initialX() {
-            return this.left ? -100 : 100;
+            const screenWidth = window.innerWidth;
+            let margin = screenWidth * 0.1;
+            if (screenWidth <= 1000) {
+                margin = screenWidth * 0.01;
+            }
+            return this.left ? -margin : margin;
         }
     }
 };
