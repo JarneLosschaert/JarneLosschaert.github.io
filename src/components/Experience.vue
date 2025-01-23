@@ -24,7 +24,7 @@ export default {
     computed: {
         initialX() {
             const screenWidth = window.innerWidth;
-            let margin = screenWidth * 0.1;
+            let margin = screenWidth * 0.05;
             if (screenWidth <= 1000) {
                 margin = screenWidth * 0.01;
             }
