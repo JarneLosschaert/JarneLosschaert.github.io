@@ -28,16 +28,7 @@
             <Projects id="projects" />
             <Contact id="contact" />
         </main>
-        <footer>
-            <span>&copy; 2025 - Jarne Losschaert</span>
-            <div>
-                <div v-for="social in data.socials" :key="social.id" class="social">
-                    <a :href="social.link" target="_blank">
-                        <SvgIcon :name="social.icon" />
-                    </a>
-                </div>
-            </div>
-        </footer>
+        <Footer></Footer>
         <a href="#portfolio" @click="scrollToSection" id="up" v-motion-roll-visible-bottom :duration="1000">
             <SvgIcon name="less" />
         </a>
@@ -46,12 +37,13 @@
 
 <script>
 import { portfolioData } from '../data/data.js';
-import SvgIcon from './shared/SvgIcon.vue';
-import About from './About.vue';
-import Experiences from './Experiences.vue';
-import Skills from './Skills.vue';
-import Projects from './Projects.vue';
-import Contact from './Contact.vue';
+import SvgIcon from '../components/shared/SvgIcon.vue';
+import About from '../components/About.vue';
+import Experiences from '../components/Experiences.vue';
+import Skills from '../components/Skills.vue';
+import Projects from '../components/Projects.vue';
+import Contact from '../components/Contact.vue';
+import Footer from '../components/shared/Footer.vue';
 
 export default {
     data() {
@@ -108,7 +100,8 @@ export default {
         Experiences,
         Skills,
         Projects,
-        Contact
+        Contact,
+        Footer
     }
 };
 </script>
@@ -181,41 +174,6 @@ header nav ul li a:hover {
     border-radius: 50%;
 }
 
-footer {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem 0;
-    width: 100%;
-    background-color: var(--blue);
-    box-shadow: var(--shadow);
-    text-align: center;
-}
-
-footer div {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
-footer svg {
-    height: 2.25rem;
-    width: 2.25rem;
-    fill: var(--light-grey);
-    color: var(--light-grey);
-    transition: var(--hover-transition-s);
-}
-
-svg path {
-    fill: var(--blue);
-}
-
-footer svg:hover {
-    fill: var(--green);
-    color: var(--green);
-    transition: var(--hover-transition);
-}
-
 #up {
     display: flex;
     background-color: var(--green);
@@ -252,11 +210,6 @@ footer svg:hover {
     #up svg {
         height: 0.75rem;
         width: 0.75rem;
-    }
-
-    footer svg {
-        height: 2rem;
-        width: 2rem;
     }
 }
 

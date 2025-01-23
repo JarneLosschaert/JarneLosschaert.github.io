@@ -8,6 +8,7 @@ const icons = {
     'send': () => import('../../assets/icons/send.vue'),
     'less': () => import('../../assets/icons/less.vue'),
     'more': () => import('../../assets/icons/more.vue'),
+    'home': () => import('../../assets/icons/home.vue'),
     // Socials
     'github': () => import('../../assets/icons/socials/github.vue'),
     'linkedin': () => import('../../assets/icons/socials/linkedin.vue'),
