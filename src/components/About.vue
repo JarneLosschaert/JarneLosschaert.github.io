@@ -202,8 +202,9 @@ export default {
 }
 
 @media (max-width: 700px) {
-    #about-profile {
-        display: none;
+    #about {
+        flex-direction: column;
+        gap: 2rem;
     }
 }
 </style>
