@@ -1,6 +1,6 @@
 <template>
     <div v-for="experience in experiences" :key="experience.id" :class="['experience', { right: !left }]">
-        <Motion :initial="{ opacity: 0, x: initialX }" :visible-once="{ opacity: 1, x: 0, scale: 1 }" :duration="1000">
+        <Motion :initial="{ opacity: 0, x: initialX, y: initialY }" :visible-once="{ opacity: 1, x: 0, y:0, scale: 1 }" :duration="1000">
             <div class="circle"></div>
             <h4 v-html="experience.date"></h4>
             <img :src="experience.image" :alt="experience.date" />
@@ -24,12 +24,20 @@ export default {
     computed: {
         initialX() {
             const screenWidth = window.innerWidth;
-            let margin = screenWidth * 0.05;
+            let margin = 50;
             if (screenWidth <= 1000) {
-                margin = screenWidth * 0.01;
+                margin = 0;
             }
             return this.left ? -margin : margin;
-        }
+        },
+        initialY() {
+            const screenWidth = window.innerWidth;
+            let margin = 0;
+            if (screenWidth <= 1000) {
+                margin = 100;
+            }
+            return margin;
+        },
     }
 };
 </script>

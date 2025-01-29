@@ -4,7 +4,7 @@
             <img src="../assets/images/zombie.png" alt="zombie" v-motion-pop :duration="10000">
             <div>
                 <h1><span>Oops!</span> Page not Found.</h1>
-                <p>Run away while you still can!</p>
+                <p>Run away while you still can!!!</p>
                 <button>
                     <p>Back to home</p>
                     <SvgIcon name="home" />

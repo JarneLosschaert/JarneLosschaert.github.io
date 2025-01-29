@@ -3,7 +3,7 @@
         <h2 v-motion-slide-visible-once-bottom :duration="1000"><span>Projects</span> I've Built</h2>
         <div>
             <div v-for="(project, index) in displayedProjects" :key="project.id" class="project">
-                <Motion :initial="{ opacity: 0, x: getInitialX(index) }" :visible-once="{ opacity: 1, x: 0, scale: 1 }"
+                <Motion :initial="{ opacity: 0, x: getInitialX(index), y: getInitialY() }" :visible-once="{ opacity: 1, x: 0, y: 0, scale: 1 }"
                     :duration="1000">
                     <div>
                         <h3 v-html="project.title"></h3>
@@ -67,11 +67,19 @@ export default {
         },
         getInitialX(index) {
             const screenWidth = window.innerWidth;
-            let margin = screenWidth * 0.05;
-            if (screenWidth <= 1000) {
-                margin = screenWidth * 0.01;
+            let margin = 50;
+            if (screenWidth <= 1100) {
+                margin = 0;
             }
             return index % 2 === 0 ? margin : -margin;
+        },
+        getInitialY() {
+            const screenWidth = window.innerWidth;
+            let margin = 0;
+            if (screenWidth <= 1100) {
+                margin = 100;
+            }
+            return margin;
         },
         scrollToSection(targetElement) {
             if (targetElement) {
@@ -201,7 +209,7 @@ button {
 
     .project>div {
         flex-direction: column;
-        gap: 1rem;
+        gap: 2rem;
         padding: 0.5rem;
         margin: 0;
     }

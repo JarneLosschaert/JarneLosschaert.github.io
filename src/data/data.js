@@ -40,7 +40,7 @@ export const portfolioData = {
         {
             id: 2, title: "Bachelor", date: "SEP 2021 - JUN 2024",
             image: "./experiences/howest.jpg",
-            description: "I completed my studies at <span>Howest University</span> in Bruges, where I pursued a <span>Bachelor's degree in Applied Computer Science</span>, graduating with <span>distinction</span>. The time I had spent at Howest gave me nearly all the <span>technical skills</span> that I use today, from the programming languages and software development practices. Besides academics, I got to work on <span>various projects</span> and collaborate with different talents, enhancing my problem-solving and teamwork abilities a lot. I also had the chance to make lasting <span>friendships</span> and create wonderful <span>memories</span> throughout my journey."
+            description: "I completed my studies at <span>Howest</span> in Bruges, where I pursued a <span>Bachelor's degree in Applied Computer Science</span>, graduating with <span>distinction</span>. The time I had spent at Howest gave me nearly all the <span>technical skills</span> that I use today, from the programming languages and software development practices. Besides academics, I got to work on <span>various projects</span> and collaborate with different talents, enhancing my problem-solving and teamwork abilities a lot. I also had the chance to make lasting <span>friendships</span> and create wonderful <span>memories</span> throughout my journey."
         },
         {
             id: 1, title: "Secondary Education", date: "SEP 2014 - JUN 2021",
@@ -73,7 +73,7 @@ export const portfolioData = {
     projects: [
         {
             id: 1, title: "Personal Portfolio", description: "I designed and developed my personal portfolio to showcase my skills, projects, and creativity as a software engineer. The design was crafted to reflect my style, while the website was built using Vue.js to make it dynamic and responsive for users. I also integrated animations and transitions to enhance the user experience and create a visually engaging platform.",
-            image: "./projects/portfolio-front.png",
+            image: "./projects/portfolio.png",
             tags: [
                 { id: 1, name: "Vue.js" },
                 { id: 2, name: "CSS" },
@@ -86,7 +86,7 @@ export const portfolioData = {
         },
         {
             id: 2, title: "FlavorAI", description: "FlavorAI is a mobile application that simplifies daily life by helping users discover creative recipes based on the ingredients they already have at home. The app uses advanced recognition technology to identify items from a photo of the fridge and suggests delicious meal ideas tailored to what's available. Additionally, FlavorAI tracks fridge contents and offers complementary ingredient suggestions to inspire even more flavorful creations.",
-            image: "./projects/heroes-front.png",
+            image: "./projects/flavorai.png",
             tags: [
                 { id: 1, name: "Flutter" },
                 { id: 1, name: "AI" },
@@ -100,7 +100,7 @@ export const portfolioData = {
         },
         {
             id: 3, title: "DeliverMe", description: "DeliverMe is a user-friendly package delivery app that connects senders and drivers, allowing for seamless and efficient package deliveries. Users are able to request deliveries through the app, and nearby drivers can accept and complete the deliveries. The app provides real-time tracking of deliveries, similar to how Uber shows the location of drivers.",
-            image: "./projects/heroes-front.png",
+            image: "./projects/deliverme.png",
             tags: [
                 { id: 4, name: "Kotlin" },
                 { id: 3, name: "Adroid Studio" },
@@ -114,7 +114,7 @@ export const portfolioData = {
         },
         {
             id: 4, title: "PlantFocus Label Editor", description: "During my internship, I developed a prototype for personalizing plant labels in a user-friendly way, transforming customized designs into downloadable PDF files. Using .NET and Blazor, I built the application and created the design, combining technical skills with creativity to deliver a functional and visually appealing solution.",
-            image: "./projects/heroes-front.png",
+            image: "./projects/plantfocus.png",
             tags: [
                 { id: 1, name: ".NET" },
                 { id: 2, name: "Blazor" },
@@ -130,7 +130,7 @@ export const portfolioData = {
         },
         {
             id: 7, title: "Monopoly", description: "Developed during the first year of our bachelor's program, this project is an online multiplayer web application for playing Monopoly with a retro tech theme. It features a Java-based server for game logic and real-time interactions, combined with a dynamic web interface.",
-            image: "./projects/monopoly-front.png",
+            image: "./projects/monopoly.png",
             tags: [
                 { id: 1, name: "HTML" },
                 { id: 1, name: "CSS" },
@@ -145,7 +145,7 @@ export const portfolioData = {
         },
         {
             id: 8, title: "Magic: The Gathering", description: "This web application was created as part of a school project and serves as a deck builder for the card game Magic: The Gathering. Developed with Blazor for the frontend and a .NET backend, it streamlines the process of designing and managing custom decks for players.",
-            image: "./projects/heroes-front.png",
+            image: "./projects/mtg.png",
             tags: [
                 { id: 1, name: ".NET" },
                 { id: 2, name: "Blazor" },
@@ -156,7 +156,7 @@ export const portfolioData = {
         },
         {
             id: 5, title: "Heroes App", description: "For the Heroes app project, We developed a client-side application using Vue.js, with Laravel powering the server. The app displayed a list of heroes and allowed users to create accounts to save their favorite heroes. Additionally, we implemented the page's translation functionality to support multiple languages.",
-            image: "./projects/heroes-front.png",
+            image: "./projects/heroes.png",
             tags: [
                 { id: 1, name: ".Vue.js" },
                 { id: 2, name: "Laravel" },
@@ -169,7 +169,7 @@ export const portfolioData = {
         },
         {
             id: 6, title: "Kip Met Appelmoes", description: "Kip Met Appelmoes (Chicken With Applesauce) is a mobile application developed using Kotlin, designed for parents who want to enjoy a restaurant outing without the stress of managing their children. The app helps users find nearby restaurants and filter them based on child-friendly features such as high chairs, kids' menus, playgrounds, and more.",
-            image: "./projects/heroes-front.png",
+            image: "./projects/kma.png",
             tags: [
                 { id: 1, name: "Kotlin" },
                 { id: 2, name: "Android Studio" },
